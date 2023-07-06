@@ -1,0 +1,613 @@
+﻿
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">الصفحة الرئيسية / </span> التراخيص </h4>
+
+
+        <!-- عرض التراخيص -->
+
+        <div class="col-12 mb-4">
+            <div id="wizard-validation" class="bs-stepper vertical mt-2">
+
+                <div class="bs-stepper-header">
+                    <div class="step" data-target="#main-data">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">1</span>
+                            <span class="bs-stepper-label"> البيانات الرئيسية </span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#units">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">2</span>
+                            <span class="bs-stepper-label">   وحدات القياس </span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+
+
+                    <div class="step" data-target="#counts">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">3</span>
+                            <span class="bs-stepper-label">  الشركة المنتجة  </span>
+                        </button>
+                    </div>
+
+                    <div class="line"></div>
+                    <div class="step" data-target="#standard">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">4</span>
+                            <span class="bs-stepper-label">   معايير الصنف  </span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#StorageConditions">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">5</span>
+                            <span class="bs-stepper-label">  شروط التخزين </span>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="bs-stepper-content">
+
+                    <form id="wizard-validation-form" onSubmit="return false">
+                        <!-- Account Details -->
+
+                        <div id="main-data" class="content">
+                            <div class="content-header mb-3">
+                                <div class="mt-4"></div>
+                                <h6 class="mb-0">بيانات الرئيسية الصنف </h6>
+                                <small>ادخال البيانات الرئيسية  </small>
+                            </div>
+                            <div class="row g-3">
+
+
+
+                                <div class="col-sm-4">
+                                    
+                                    <label for="itemGroupA" class="form-label">مجموعة الاصناف الرئيسية</label>
+                                        <div class="input-group">
+                                    <select id="itemGroupA"
+                                            name="itemGroupA"
+                                            class=" form-select form-select-lg"
+                                            data-allow-clear="true">
+                                    </select>
+                                </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="itemGroupB" class="form-label">مجموعة الاصناف الفرعية أ</label>
+                                             <div class="input-group">
+                                    <select id="itemGroupB"
+                                            name="itemGroupB"
+                                            class=" form-select form-select-lg"
+                                            data-allow-clear="true">
+                                    </select>
+                                </div> 
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="itemGroupC" class="form-label">مجموعة الاصناف الفرعية ب</label>
+                                    <div class="input-group">
+                                    <select id="itemGroupC"
+                                            name="itemGroupC"
+                                            class=" form-select form-select-lg"
+                                            data-allow-clear="true">
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="itemNumber"> رقم الصنف </label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="number" id="itemNumber" name="itemNumber" class="form-control" placeholder="1" readonly />
+                                    </div>
+                                </div>
+
+                                <div class=" col-sm-4">
+                                    <label class="form-label" for="itemName"> اسم الصنف </label>
+                                    <input type="text" id="itemName" name="itemName" class="form-control" placeholder="" />
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="itemDiscription">وصف الصنف </label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="itemDiscription" name="itemDiscription" class="form-control"
+                                               placeholder="" />
+
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-4">
+
+                                      <label class="form-label" for="itemType"> نوع الصنف</label>
+                                          <div class="input-group">
+                                    <select id="itemType"
+                                            name="itemType"
+                                            class=" form-select">
+                                        <option label="">  </option>
+                                        <option value="0"> سلعي  </option>
+                                        <option value="1"> خدمي  </option>  
+                                        <option value="3"> منتج  </option>
+                                    </select>
+                                </div>
+                                          </div>
+
+                            
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="itemPrice"> السعر </label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="number"
+                                               id="itemPrice"
+                                               name="itemPrice"
+                                               class="form-control numeral1"
+                                               placeholder="" />
+                                    </div>
+                                </div>
+
+                                     <div class="col-sm-4">
+                                    <label class="form-label" for="primaryUnit">الوحدة الأساسية</label>
+                                    <div class="input-group">
+                                        <select id="primaryUnit" name="primaryUnit" class="form-select">
+
+                                            <option label="">      </option>
+                                            <option value="kg">كيلوغرام (kg)</option>
+                                            <option value="g">حبة</option>
+                                            <option value="Liter">   لتر (Liter)</option> 
+                                            <option value="Piece">   قطعة  (Piece)</option>  
+                                            <option value="m">   متر  </option>
+
+                                            <!-- أضف المزيد من الخيارات حسب الحاجة -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="Barcode">كود الصنف </label>
+                                    <input type="number"
+                                           id="Barcode"
+                                           name="Barcode"
+                                           class="form-control"
+                                           placeholder="" />
+
+                                </div>
+
+
+
+
+
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="ProductionDate">تاريخ أنتاج الصنف</label>
+                                    <div class="input-group input-group-merge has-validation">
+                                        <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                                        <input type="text"
+                                               class="form-control dt-date flatpickr-input"
+                                               id="ProductionDate"
+                                               name="ProductionDate"
+                                               aria-describedby="basicDate2"
+                                               placeholder="MM/DD/YYYY"
+                                               aria-label="MM/DD/YYYY">
+                                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                </div>
+
+
+
+                                <div class="col-sm-4 fv-plugins-icon-container">
+                                 <label class="form-label" for="EndDate">تاريخ انتهاء الصنف</label>
+                                    <div class="input-group input-group-merge has-validation">
+                                        <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                                        <input type="text"
+                                               class="form-control dt-date flatpickr-input"
+                                               id="EndDate" name="EndDate"
+                                               aria-describedby="basicDate2"
+                                               placeholder="MM/DD/YYYY"
+                                               aria-label="MM/DD/YYYY">
+                                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                </div>
+
+                                <div class="col-sm-4">
+
+                                    <label class="form-label" for="ItmeStatus">  حالة الصنف</label>
+                                    <select id="ItmeStatus" name="ItmeStatus" class="form-select">
+                                        <option label="">  </option>
+                                        <option value="0"> نشط  </option>
+                                        <option value="1"> غير نشط </option>
+                                    </select>
+                                </div>
+                                <div class="d-flex col-12 justify-content-between">
+                                    <a class="btn btn-label-secondary btn-prev" disabled>إلغاء</a>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Personal Info -->
+                        <div id="units" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات وحدات القياس  </h4>
+                                <small>ادخال بيانات وحدات القياس  </small>
+                            </div>
+                            <div class="row g-3">
+                                <!-- Form Repeater -->
+                                <div class="col-12 form-repeater">
+
+                                    <div data-repeater-list="group-a">
+                                        <div data-repeater-item>
+                                            <div class="row">
+
+                                                <div class="d-flex justify-content-end mt-0">
+                                                    <i class="bx bx-x  text-muted  " data-repeater-delete></i>
+                                                </div>
+
+                                                <div class="col-12 col-lg-6 col-xl-3 mb-0 mb-3">
+                                                    <label class="form-label" for="form-repeater-1-1">الوحدة الأساسية</label>
+                                                    <input type="text" name="form-repeater-1-1" id="form-repeater-1-1" class="form-control" placeholder="حبة" readonly />
+
+                                                </div>
+
+                                                <div class="col-12 col-lg-6 col-xl-3 mb-0 mb-3">
+                                                    <label class="form-label" for="form-repeater-1-2">الوحدة الثانوية</label>
+                                                    <input type="text" name="form-repeater-1-2" id="form-repeater-1-2" class="form-control" placeholder="كرتون" />
+                                                </div>
+
+                                                <div class="col-12 col-lg-6 col-xl-2 mb-0 mb-3">
+                                                    <label class="form-label" for="form-repeater-1-3">التعبئة</label>
+                                                    <input type="number" nmae="form-repeater-1-3" id="form-repeater-1-3" class="form-control" placeholder="24 حبة" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                    </div>
+                                    <div class="mb-0">
+                                        <button class="btn btn-label-secondary" data-repeater-create>
+                                            <i class="bx bx-plus"></i>
+                                            <span class="align-middle">إضافة وحدة قياس</span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <!-- /Form Repeater -->
+
+                                <div class="col-sm-6">
+                                </div>
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+
+                        <div id="counts" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات الشركة المنتجة  </h4>
+                                <small>ادخال بيانات الشركة المنتجة  </small>
+                            </div>
+
+                            <div class="row g-3">
+                                @*      <div class="col-sm-4">
+                                    <label class="form-label d-block" for="CN"> رقم بلد المنشأ</label>
+                                    <div class="input-group">
+                                    <input type="number" class="form-control" id="CN" name="CN"
+                                    placeholder="1" readonly />
+                                    </div>
+                                    </div>*@
+                              
+                                    
+                                        <div class="col-sm-4">
+                                        <label class="form-label" for="CountryOrigin">   بلد المنشأ </label>
+                                        <select id="CountryOrigin"
+                                                name="CountryOrigin"
+                                                class=" form-select "
+                                                placeholder="   بلد المنشأ"
+                                                aria-label=" بلد المنشأ  ">
+                                        </select>
+                                    </div>
+
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="BrandName"> اسم الماركة </label>
+                                    <div class="input-group">
+                                        <input type="text"
+                                               id="BrandName"
+                                               name="BrandName"
+                                               class="form-control"
+                                               placeholder="" />
+
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex col-12 justify-content-between ">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- معايير الصنف -->
+                        <div id="standard" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">معايير الصنف  </h4>
+                                <small>ادخال معايير الصنف  </small>
+                            </div>
+
+                            <div class="row g-3">
+
+
+                                <label class="form-label fs-6"> الوزن</label>
+
+                                <div class="col-sm-6">
+                                    <label class="form-label d-block" for="weight">الوزن </label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="weight" name="weight"
+                                               placeholder="25" />
+                                    </div>
+                                </div>
+                              
+
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="weightUnit">وحدة القياس</label>
+                                    <div class="input-group">
+                                        <select id="weightUnit" name="weightUnit" class="form-select">
+
+                                            <option label="">      </option>
+                                            <option value="kg">كيلوغرام (kg)</option>
+                                            <option value="g">جرام (g)</option>
+                                            <option value="ton">طن (ton)</option>
+
+                                            <!-- أضف المزيد من الخيارات حسب الحاجة -->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <label class="form-label fs-6"> الحجم</label>
+
+                                <div class="col-sm-6">
+                                    <label class="form-label d-block" for="size">الحجم </label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="size" name="size"
+                                               placeholder="25" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label d-block" for="sizeUnit">وحدة القياس </label>
+                                    <div class="input-group">
+                                    
+     
+                   <select id="sizeUnit" name="sizeUnit" class="form-select">
+                          <option label=""></option>
+                  <option value="متر مكعب">متر مكعب</option>
+                  <option value="لتر">لتر</option>
+                  <option value="قدم مكعب ">قدم مكعب </option>   
+                  <option value=" سنتمتر مكعب ">سنتمتر مكعب  </option> 
+                  <option value="  مليميتر مكعب ">مليميتر مكعب   </option>
+                   <!-- أضف المزيد من الخيارات حسب الحاجة -->
+                   </select>
+                      
+
+                                    </div>
+                                </div>
+
+                                <label class="form-label fs-6"> الأبعاد</label>
+
+
+                                <div class="col-sm-6">
+                                    <label class="form-label d-block" for="dimensionalUnit">وحدة القياس </label>
+                                    <div class="input-group">
+                               
+ 
+              <select id="dimensionalUnit" name="dimensionalUnit" class="form-select">
+               <option label=""></option>
+               <option value="متر ">متر </option>
+                 <option value="سنتيمتر  ">سنتيمتر  </option>
+              <option value="مليمتر  ">مليمتر  </option>
+              <option value="قدم  ">قدم  </option>
+              <option value="بوصة  ">بوصة  </option>
+              <!-- أضف المزيد من الخيارات حسب الحاجة -->
+                 </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label d-block" for="length1">الطول </label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="length1" name="length1"
+                                               placeholder="2" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label d-block" for="width1">العرض </label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="width1" name="width1"
+                                               placeholder="25" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label d-block" for="height1">الارتفاع </label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="height1" name="height1"
+                                               placeholder="250" />
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- معايير الصنف -->
+                        <!-- شروط التخزين -->
+                        <div id="StorageConditions" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات شروط التخزين  </h4>
+                                <small>ادخال شروط التخزين  </small>
+                            </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-sm-6 ">
+
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" id="selectAll" />
+                                        <label class="form-check-label form-label fs-6" for="selectAll"> اختيار الكل </label>
+                                    </div>
+                                    <hr>
+
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input input-filter" type="checkbox" name="temperature" id="check1" />
+                                        <label class="form-check-label form-label d-block" for="temperature">درجة الحرارة </label>
+                                        <div class="row g-3">
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" id="fromTemperature" name="temperature"
+                                                       placeholder="من" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" id="toTemperature" name="temperature"
+                                                       placeholder="إلى" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input input-filter" type="checkbox" name="humidity" id="check2" />
+                                        <label class="form-check-label form-label d-block" for="humidity"> الرطوبة </label>
+                                        <div class="row g-3">
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" id="fromHumidity" name="minHumidity"
+                                                       placeholder="من" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" id="toHumidity" name="minHumidity"
+                                                       placeholder="إلى" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input input-filter" type="checkbox" name="lighting" id="check3" />
+                                        <label class="form-check-label form-label d-block" for="lighting"> الإضاءة </label>
+                                        <div class="row g-3">
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" id="fromLighting" name="lighting"
+                                                       placeholder="من" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" id="toLighting" name="lighting"
+                                                       placeholder="إلى" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input input-filter" type="checkbox" name="dry"
+                                               id="dry" />
+                                        <label class="form-check-label form-label d-block" for="dry">أن يكون المخزن جاف </label>
+                                    </div>
+
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input input-filter" type="checkbox" name="lihgtSlots"
+                                               id="lihgtSlots" />
+                                        <label class="form-check-label form-label d-block" for="lihgtSlots">   توفير فتحات الغضاءة والتهوية </label>
+                                    </div>
+
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input input-filter" type="checkbox" name="typeStore"
+                                               id="typeStore" />
+                                        <label class="form-check-label form-label d-block" for="typeStore"> يتم تخزين كل نوع على حدة  </label>
+                                    </div>
+
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input input-filter" type="checkbox" name="menus"
+                                               id="menus" />
+                                        <label class="form-check-label form-label d-block" for="menus">يتم وضع المواد المخزنة على رفوف  </label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <div>
+                                        <button type="submit" class="btn btn-primary btn-next">
+                                            حفظ
+                                        </button>
+                                        <a class="btn btn-label-secondary">إلغاء</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /Validation Wizard -->
+    </div>
+
+
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../../assets/vendor/libs/popper/popper.js"></script>
+<script src="../../assets/vendor/js/bootstrap.js"></script>
+<script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+<script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+<script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+<script src="../../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<script src="../../assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+<script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+<script src="../../assets/vendor/libs/select2/select2.js"></script>
+<script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+<script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+<script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+
+<!-- Main JS -->
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/forms-extras.js"></script>
+<!-- Page JS -->
+
+<script src="../../assets/js/form-wizard-numbered.js"></script>
+<script src="../../assets/js/Licenses-items-validation.js"></script>
+<!--/ بيانات طالب الترخيص -->
+<script src="~/js/Item.js"></script>
+
+<script src="~/assets/js/select2.js"></script>
+<script src="~/assets/js/repeater.js"></script>
+<script src="~/assets/js/alert.js"></script>
+<script src="~/assets/js/تشك شروط التخزين لإضافة صنف.js"></script>

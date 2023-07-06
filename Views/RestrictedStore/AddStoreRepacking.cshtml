@@ -1,0 +1,277 @@
+﻿ 
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4">
+            <span class="text-muted fw-light">الرئيسية /</span>
+            إدارة التراخيص
+        </h4>
+        <!-- Sticky Actions -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div id="sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 82.75px;">
+                        <div class="card-header sticky-element bg-label-secondary  flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                            <h5 class="card-title me-2 mb-sm-0">     تقيد ترخيص مخزن إعادة التعبئة </h5>
+                            <div class="dt-action-buttons text-end pt-3 pt-md-0">
+                                <div class="dt-buttons">
+                                    <button class="dt-button buttons-collection btn btn-label-primary dropdown-toggle me-2" tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="true" aria-expanded="false">
+                                        <span class="align-middle"> رجوع</span>
+                                    </button>
+                                    <a asp-action="AddRepacking">
+                                        <button class="dt-button create-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button">
+                                            <span><i class="bx bx-plus me-sm-2"></i> <span class="d-none d-sm-inline-block">  تقيد ترخيص  </span></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <!-- 1. Delivery Address -->
+                                <h5 class="mb-4" style="margin-top:38px"> بيانات طالب الترخيص </h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="itemNumber"> رقم الترخيص </label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="number" name="licensesNumber" class="form-control" placeholder="1" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="basicFullname">اسم طالب الترخيص   </label>
+                                        <div class="input-group input-group-merge has-validation">
+
+                                            <input type="text" id="basicFullname" class="form-control dt-full-name" name="basicFullname" placeholder="اسم طالب الترخيص" aria-label="John Doe" aria-describedby="basicFullname2" readonly>
+                                        </div>
+                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label"> اللقب  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="اللقب" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label"> نوع البطاقة  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="نوع البطاقة" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="basicDate">تاريخ الاصدار</label>
+                                        <div class="input-group input-group-merge has-validation">
+                                            <input type="text"
+                                                   required
+                                                   class="form-control dt-full-name"
+                                                   placeholder="2023/6/2 " readonly />
+                                        </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label"> مكان صدورها  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="مكان صدورها" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">الجنسية </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="الجنسية" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label"> رقم الهاتف </label>
+                                        <input type="number"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="رقم الهاتف" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label"> رقم الجوال </label>
+                                        <input type="number"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="رقم الجوال" readonly />
+                                        <span class="text-danger"></span>
+
+                                    </div>
+
+                                    <hr>
+                                    <h5 class="offcanvas-title"> بيانات فتح المخزن </h5>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="itemNumber"> رقم المخزن </label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="number" name="storeNumber" class="form-control" placeholder="1" readonly />
+                                        </div>
+                                    </div>
+                                    <h5 class="offcanvas-title" id="exampleModalLabel"> عنوان المخزن   </h5>
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label"> المحافظة  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="المحافظة" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label">المديرية </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="المديرية" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label"> أمام  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="أمام" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label">شارع </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="شارع" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label"> جوار </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="جوار" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+
+                                        <label class="form-label" for="basicDate">تاريخ طالب الترخيص</label>
+                                        <div class="input-group input-group-merge has-validation">
+                                            <span id="basicDate2" class="input-group-text">
+                                                <i class="bx bx-calendar"></i>
+                                            </span>
+                                            <input type="text"
+                                                   required
+                                                   class="form-control dt-full-name"
+                                                   placeholder="2023/6/2 " readonly />
+                                        </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label">  حالة فتح  المخزن </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="حالة فتح المخزن" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <hr>
+
+
+                                    <!-- 2. Delivery Type -->
+                                    <h5 class="offcanvas-title" id="exampleModalLabel">بيانات السجل التجاري  </h5>
+
+
+                                    <div class="col-sm-6">
+                                        <label class="form-label"> الاسم  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="  الاسم " readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="form-label"> رقم السجل التجاري   </label>
+                                        <input type="number"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder=" 1234 " readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label class="form-label"> الفئة  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="    تصدير" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label"> مكان النشاط  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="  صنعاء     " readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label" for="basicDate">تاريخ الاصدار</label>
+                                        <div class="input-group input-group-merge has-validation">
+                                            <span id="basicDate2" class="input-group-text">
+                                                <i class="bx bx-calendar"></i>
+                                            </span>
+                                            <input type="text"
+                                                   required
+                                                   class="form-control dt-full-name"
+                                                   placeholder="2023/6/2 " readonly />
+                                        </div>
+                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+
+                                    <div class="col-sm-6 fv-plugins-icon-container">
+                                        <label class="form-label"> الاسم التجاري  </label>
+                                        <input type="text"
+                                               required
+                                               class="form-control dt-full-name"
+                                               placeholder="الاسم التجاري" readonly />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <hr />
+
+                                    <div class="col-sm-6">
+                                        <label class="form-label">  حالة ترخيص   </label>
+                                        <select id="Cardtype" name="Cardtype" class="form-select">
+                                            <option value=NULL> يرجى اختيار حالة ترخيص </option>
+                                            <option value="5">مسداد</option>
+                                            <option value="6"> غير مسداد </option>
+
+
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Sticky Actions -->
+    </div>
+
+
+
+    <div class="content-backdrop fade"></div>
+</div>

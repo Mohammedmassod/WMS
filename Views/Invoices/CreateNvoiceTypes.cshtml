@@ -1,0 +1,61 @@
+﻿
+<div class="offcanvas offcanvas-end show" id="add-new-record" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="exampleModalLabel">اضافة نوع فاتورة</h5>
+        <a asp-action="NvoiceTypesIndex">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </a>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+
+        <form asp-action="CreateNvoiceTypes" class="add-new-record row g-2 pt-0 fv-plugins-bootstrap5 fv-plugins-framework" id="form-add-new-record" onsubmit="return false" novalidate="novalidate">
+
+            <div class="col-sm-12">
+                <label class="form-label">رقم نوع الفاتورة</label>
+                <div class="input-group input-group-merge">
+                    <input type="number" id="VNumber" name="VNumber" class="form-control" placeholder="1" readonly />
+                </div>
+            </div>
+
+                <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label" for="TypeName">اسم الفاتورة</label>
+                <input type="text" required class="form-control dt-full-name" name="TypeName" id="TypeName" placeholder="اسم الفاتورة"  />
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label" for="Amount">التكلفة  </label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text"></span>
+                    <input type="number" id="Amount" class="form-control dt-full-name" name="Amount" placeholder="ريال يمني" aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+              <div class="sm-12">
+                <label class="form-label">حالة </label>
+                <select id="select2Basic" required class="select2 form-select form-select-lg" placeholder="حالة الفاتورة">
+                <option label="">يرجى اختيار حالة </option>
+                <option value="True">نشط</option>
+                <option value="False">غير نشط</option>
+                </select>
+                <span class="text-danger"></span>
+                </div>
+     
+          
+            <div class="mb-3">
+                <label for="invoice-message" class="form-label">ملاحظات</label>
+                <textarea class="form-control" name="invoice-message" id="invoice-message" cols="3" rows="5">
+                              </textarea>
+            </div>
+
+          
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+                <button type="submit" class="btn btn-primary" id="type-success" name="submitButton">حفظ</button>
+                <button class="btn btn-label-secondary" type="reset" data-bs-dismiss="offcanvas">إلغاء</button>
+            </div>
+
+        </form>
+    </div>
+</div>

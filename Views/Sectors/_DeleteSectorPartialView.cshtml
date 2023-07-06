@@ -1,0 +1,22 @@
+﻿@model WMS.Models.Sector
+
+<div id="delete-@Model.SectorId" class="modal fade delete-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="~/assets/img/sent.png" alt="" width="50" height="46">
+                <form method="post" asp-action="Delete" class="add-new-user pt-0">
+                    <div class="mb-3">
+                        <input asp-for="SectorId" type="hidden" />
+                    </div>
+
+                    <h3 class="delete_class">هل أنت متأكد من أنك تريد حذف هذا الأصل؟</h3>
+                    <div class="m-t-20">
+                        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal">إلغاء </button>
+                        <button type="submit" id="position-top-end" class="btn btn-label-danger">حذف</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,999 @@
+﻿
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">الصفحة الرئيسية / </span> التراخيص </h4>
+
+
+
+        <!-- عرض التراخيص -->
+        <!-- DataTable with Buttons -->
+        <!-- Validation Wizard -->
+        <div class="col-12 mb-4">
+                  <div class="offcanvas-header border-bottom bs-stepper">
+        <h5 class="offcanvas-title" id="exampleModalLabel">طلب ترخيص فتح محل إعادة التعبئة </h5>
+        <a asp-action="RepackingLicenseIndex"> <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button></a>
+    </div>
+            <div id="wizard-validation" class="bs-stepper vertical mt-2">
+      
+                <div class="bs-stepper-header">
+                    <div class="step" data-target="#License-applicant-data">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">1</span>
+                            <span class="bs-stepper-label"> بيانات طالب الترخيص </span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#Shop-data-Recharge">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">2</span>
+                                 <span class="bs-stepper-label"> بيانات المخزن </span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#Refill-store-opening">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">3</span>
+                           <span class="bs-stepper-label"> بيانات فتح محل إعادة التعبئة </span>
+                        </button>
+                    </div>
+                     <div class="line"></div>
+                    <div class="step" data-target="#Item-Storge">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">4</span>
+                               <span class="bs-stepper-label"> نوع السلعة المخزنة  </span>
+                        </button>
+                    </div> 
+                    <div class="line"></div>
+                    <div class="step" data-target="#Commercial-record">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">5</span>
+                             <span class="bs-stepper-label"> بيانات السجل التجاري </span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#Tax-Number">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">6</span>
+                              <span class="bs-stepper-label"> بيانات مالك المخزن </span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#Store-owner-Data">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">7</span>
+                            <span class="bs-stepper-label"> بيانات مالك المخزن</span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#Attached-Document">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-circle">8</span>
+                            <span class="bs-stepper-label"> الوثائق المرفقة </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="bs-stepper-content">
+                    <form id="wizard-validation-form" onSubmit="return false" >
+                 <!--/   بيانات طالب الترخيص محل اعادة التعبئة  -->
+                        <div id="License-applicant-data" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات طالب الترخيص </h4>
+                                <small>ادخال بيانات طالب الترخيص </small>
+                            </div>
+                            <div class="row g-3">
+                                @* <div class="col-sm-1">
+                                    <label class="form-label" for="itemNumber"> رقم الترخيص </label>
+                                    <div class="input-group input-group-merge">
+                                    <input type="number" name="licensesNumber" class="form-control" placeholder="1" readonly />
+                                    </div>
+                                    </div>*@
+
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="formValidationFirstName">اسم طالب الترخيص </label>
+                                    <input type="text"
+                                           id="formValidationFirstName"
+                                           name="formValidationFirstName"
+                                           class="form-control"
+                                           placeholder="اسم طالب الترخيص" />
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="formValidationLastName">اللقب</label>
+                                    <input type="text"
+                                           id="formValidationLastName"
+                                           name="formValidationLastName"
+                                           class="form-control"
+                                           placeholder="اللقب" />
+
+                                </div>
+
+
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="formValidationCardtype"> نوع البطاقة</label>
+                                    <select class="form-select" id="formValidationCardtype" name="formValidationCardtype">
+                                        <option  label=" " data-select2-id="18">  </option>
+                                        <option value="True"> شخصية </option>
+                                        <option value="False"> عائلية </option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="formValidationCardtNumber"> رقم البطاقة </label>
+                                    <input type="number"
+                                           name="formValidationCardtNumber"
+                                           id="formValidationCardtNumber"
+                                           class="form-control"
+                                           placeholder="رقم البطاقة"
+                                           aria-label="1111111111" />
+                                </div>
+                                <div class="col-sm-4">
+                                 <label for="flatpickr-date" class="form-label">تاريخ الاصدار</label>
+                                   <div class="input-group input-group-merge has-validation">
+                                     <span id="basicDate2" class="input-group-text">
+                                        <i class="bx bx-calendar"></i>
+                                    </span>
+                                   <input type="text" class="form-control" placeholder="YYYY-MM-DD" id="flatpickr-date" />
+                            
+                                </div> </div>
+                             
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="formValidationPlaceRelease"> مكان صدورها  </label>
+                                    <input type="text"
+                                           name="formValidationPlaceRelease"
+                                           id="formValidationPlaceRelease"
+                                           class="form-control"
+                                           placeholder="مكان صدورها" />
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <label class="form-label" for="formValidationNationality">  الجنسية  </label>
+                                    <input type="text"
+                                           name="formValidationNationality"
+                                           id="formValidationNationality"
+                                           class="form-control"
+                                           placeholder="الجنسية" />
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <label class="form-label" for="formValidationNumberphon">  رقم الهاتف  </label>
+                                    <input type="number"
+                                           name="formValidationNumberphon"
+                                           id="formValidationNumberphon"
+                                           class="form-control"
+                                           placeholder="رقم الهاتف" />
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <label class="form-label" for="formValidationphone">  رقم الجوال  </label>
+                                    <input type="number"
+                                           name="formValidationphone"
+                                           id="formValidationphone"
+                                           class="form-control"
+                                           placeholder="رقم الجوال" />
+                                </div>
+
+
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev" disabled>
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>   
+                    
+                        <!-- Personal Info -->
+                        <div id="Shop-data-Recharge" class="content">
+                              <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات المحل  </h4>
+                                <small>ادخال بيانات المحل  </small>
+                            </div>
+                             <div class="row g-3">
+                         @*   <div class="col-sm-4">
+                                <label class="form-label" for="StoreNumber"> رقم المخزن </label>
+                                <div class="input-group input-group-merge">
+                                    <input type="number" name="storeNumber" class="form-control" placeholder="1" readonly />
+                                </div>
+                            </div>*@
+
+                               <h5 class="offcanvas-title" id="exampleModalLabel"> عنوان المحل   </h5>
+                                 <div class="col-sm-4">
+                     
+                                        <label class="form-label" for="formValidationProvince">  المحافظة</label>
+                                        <select id="formValidationProvince" name="formValidationProvince" class="form-select">
+                                            <option label=" " data-select2-id="18"></option>
+                                            <option data-select2-id="71">صنعاء</option>
+                                            <option data-select2-id="72">إمانة العاصمة </option>
+                                            <option data-select2-id="73">إب </option>
+                                            <option data-select2-id="74">تعز</option>
+                                            <option data-select2-id="75">ذمار</option>
+                                            <option data-select2-id="76">الحديدة</option>
+                                            <option data-select2-id="77">صعدة</option>
+                                            <option data-select2-id="78">عدن    </option>
+                                            <option data-select2-id="80"> سيئؤن</option>
+                                            <option data-select2-id="81">المكلاء </option>
+                                            <option data-select2-id="82">حضرموت</option>
+                                            <option data-select2-id="83">حجة  </option>
+                                            <option data-select2-id="84">ريمة  </option>
+                                            <option data-select2-id="85">عمران   </option>
+                                            <option data-select2-id="86">    المحويت</option>
+                                            <option data-select2-id="87">    لحج</option>
+                                            <option data-select2-id="88">    الضالع</option>
+                                            <option data-select2-id="89">    المهرة</option>
+                                            <option data-select2-id="90">    البيضاء</option>
+                                            <option data-select2-id="92">    الجوف</option> 
+                                            <option data-select2-id="93">    مارب</option> 
+                                            <option data-select2-id="93">    أبين</option>  
+                                            <option data-select2-id="93">    يافع</option>
+                                        </select>
+                                        <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                    </div>
+
+                            <div class="col-sm-4">
+                                <label class="form-label" for="formValidationDirectorate">المديرية </label>
+                                         <select id="formValidationDirectorate"
+                                            name="formValidationDirectorate"
+                                            class=" form-select "
+                                            data-allow-clear="true">
+                                    </select>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <label class="form-label" for="formValidationFront"> أمام  </label>
+                                <input type="text"
+                                       name="formValidationFront"
+                                       id="formValidationFront"
+                                       class="form-control"
+                                       placeholder="أمام" />
+                        
+                            </div>
+
+                            <div class="col-sm-4 ">
+                                <label class="form-label" for="formValidationStreet">شارع </label>
+                                <input type="text"
+                                       name="formValidationStreet"
+                                       id="formValidationStreet"
+                                       class="form-control"
+                                       placeholder="شارع" />
+                                              </div>
+
+                            <div class="col-sm-4">
+                                <label class="form-label" for="formValidationNeighbohood"> جوار </label>
+                                <input type="text"
+                                       name="formValidationNeighbohood"
+                                       id="formValidationNeighbohood"
+                                       class="form-control"
+                                       placeholder="جوار" />
+                             
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="form-label" for="formValidationTypebuilding"> نوع المخزن</label>
+                                <select  class="select2 form-select form-select-lg" id="formValidationTypebuilding" name="formValidationTypebuilding" >
+                                    <option label=" ">  </option>
+                                    <option > مركزي </option>
+                                    <option> خدمي </option>
+                                    <option> تجاري </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="form-label" for="formValidationStoreMode"> وضع مخزن إعادة التعبئة</label>
+                                <select id="formValidationStoreMode" name="formValidationStoreMode" class="form-select">
+                                         <option label=" "> </option>
+                                    <option value="True"> ملك </option>
+                                    <option value="False"> إيجار </option>
+                                </select>
+                            </div>
+                                 <div class="col-sm-4">
+                                <label class="form-label" for="StockStatus">  فئة المخزن </label>
+                                <select id="StockStatus" name="StockStatus" class=" form-select">
+                                    <option label="">  </option>
+                                    <option value="True"> مخزن تخزين </option>
+                                    <option value="False"> مخزن  إعادة التعبئة  </option>
+                                </select>
+                            </div>
+
+                            <div class="d-flex col-12 justify-content-between ">
+                                <button class="btn btn-label-secondary btn-prev">
+                                    <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                    <span class="d-none d-sm-inline-block">السابق</span>
+                                </button>
+                                <button class="btn btn-primary btn-next">
+                                    <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                    <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                </button>
+                            </div>
+                        </div> 
+                        </div>
+
+                           
+                        <div id="Refill-store-opening" class="content">
+                               <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات فتح مخزن إعادة التعبئة  </h4>
+                                <small>ادخال بيانات فتح مخزن إعادة التعبئة  </small>
+                            </div>
+                                
+           <div class="row g-3">
+                <div class="col-sm-4">
+                    <label class="form-label" for="formValidationNameStore">اسم المحل   </label>
+                        <input type="text" 
+                        id="formValidationNameStore" 
+                        class="form-control dt-full-name" 
+                        name="formValidationNameStore" 
+                        placeholder="اسم المحل" 
+                        aria-label="اسم المحل" 
+                        aria-describedby="formValidationNameStore">
+                    </div>
+
+             
+
+            
+@*
+                <div class="col-sm-4">
+                    <label class="form-label" for="formValidationLength"> طول المخزن  </label>
+                    <input type="number"
+                          name="formValidationLength"
+                          id="formValidationLength"
+                          class="form-control"
+                           placeholder="طول المخزن" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label class="form-label" for="formValidationWidth">عرض المخزن </label>
+                    <input type="number"
+                          name="formValidationWidth"
+                          id="formValidationWidth"
+                          class="form-control"
+                           placeholder="عرض المخزن" />
+                    </div>
+                <div class="col-sm-4">
+                    <label class="form-label" for="formValidationHeight"> ارتفاع المخزن  </label>
+                    <input type="number"
+                          name="formValidationHeight"
+                          id="formValidationHeight"
+                          class="form-control"
+                           placeholder="ارتفاع  المخزن" />
+                           </div>
+
+                <div class="col-sm-4">
+                    <label class="form-label" for="formValidationNumberSlots">عدد الفتحات </label>
+                    <input type="number"
+                          name="formValidationNumberSlots"
+                          id="formValidationNumberSlots"
+                          class="form-control"
+                           placeholder="عدد الفتحات" />
+                        </div>
+
+                <div class="col-sm-4">
+                    <label class="form-label" for="EstimatedCapacity"> السعة التقديرية  </label>
+                    <input type="number"
+                           name="EstimatedCapacity"
+                          id="EstimatedCapacity"
+                          class="form-control"
+                           placeholder="السعة التقديرية" />
+                </div>
+
+                <div class="col-sm-4">
+                    <label class="form-label" for="StorageConditions"> ظروف التخزين</label>
+                    <select id="StorageConditions" name="StorageConditions" class="form-select">
+                        <option value=NULL> يرجى اختيار ظروف التخزين </option>
+                        <option value="5">مبردة</option>
+                        <option value="6"> عادية </option>
+                        <option value="7"> مجمدة </option>
+
+
+                    </select>
+                </div>
+*@
+                <div class="col-sm-4">
+
+                    <label class="form-label" for="flatpickr-datetime">تاريخ الطلب</label>
+                    <div class="input-group input-group-merge has-validation">
+                        <span id="basicDate2" class="input-group-text">
+                            <i class="bx bx-calendar"></i>
+                        </span>
+                        <input type="text" class="form-control dt-date flatpickr-input"
+                               id="flatpickr-datetime"
+                               name="flatpickr-datetime"
+                               aria-describedby="basicDate2"
+                               placeholder="MM/DD/YYYY"
+                               aria-label="MM/DD/YYYY"
+                              />
+                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                </div>
+                 <div class="col-sm-4">
+
+                         <label class="form-label" for="StatusOpen">  حالة فتح مخزن إعادة التعبئة </label>
+                                <select id="StatusOpen" name="StatusOpen" class="form-select">
+                                    <option label=" " data-select2-id="21">  </option>
+                                    <option value="0"> جديد </option>
+                                    <option value="1"> تجديد </option>
+                                </select>
+                            </div>
+
+
+                <div class="d-flex col-12 justify-content-between ">
+                    <button class="btn btn-label-secondary btn-prev">
+                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                        <span class="d-none d-sm-inline-block">السابق</span>
+                    </button>
+                    <button class="btn btn-primary btn-next">
+                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                    </button>
+                </div>
+            </div>     
+            </div>
+              <!--/ نوع السلعة المخزنة -->
+                        <div id="Item-Storge" class="content form-repeater">
+
+                                    <div class="content-header mb-3">
+                            <h4 class="mb-0">نوع السلعة المخزنة  </h4>
+                        </div>
+
+                           <div data-repeater-list="group-a">
+                            <div data-repeater-item>
+                        <small>ادخال نوع السلعة المراد تخزينة   </small>
+                                <div class="row g-3">
+                                    
+                                <div class="col-sm-4">
+                                    <label for="itemGroupA" class="form-label">مجموعة الاصناف الرئيسية</label>
+                                    <select id="itemGroupA"
+                                            name="itemGroupA"
+                                            class=" form-select  "
+                                            data-allow-clear="true">
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="itemGroupB" class="form-label">مجموعة الاصناف الفرعية أ</label>
+                                    <select id="itemGroupB"
+                                            name="itemGroupB"
+                                            class=" form-select "
+                                            data-allow-clear="true">
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="itemGroupC" class="form-label">مجموعة الاصناف الفرعية ب</label>
+                                    <select id="itemGroupC"
+                                            name="itemGroupC"
+                                            class=" form-select  "
+                                            data-allow-clear="true">
+                                    </select>
+                                </div>
+                                    <div class="col-sm-4">
+                                        <label class="form-label" for="itemNumber"> كود الصنف </label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="number" id="itemNumber" name="itemNumber" class="form-control" placeholder="1"  />
+                                        </div>
+
+                                    </div>
+                                          
+                                <div class="col-sm-4">
+                                      <label class="form-label" for="itemType"> نوع الصنف</label>
+                                          <div class="input-group">
+                                    <select id="itemType"
+                                            name="itemType"
+                                            class=" form-select">
+                                        <option label="">  </option>
+                                        <option value="0"> سلعي  </option>
+                                        <option value="1"> خدمي  </option>  
+                                        <option value="3"> منتج  </option>
+                                    </select>
+                                </div>
+                                          </div>
+
+                                    <div class="col-sm-4">
+                                        <label class="form-label" for="itmeName"> اسم السلعة </label>
+                                        <select id="itmeName"
+                                                name="itmeName"
+                                                class=" form-select "
+                                                placeholder="اسم السلعة"
+                                                aria-label="اسم السلعة">
+                                        </select>
+                                    </div>
+                            
+                                        <div class="col-sm-4">
+                                        <label class="form-label" for="CountryOrigin">   بلد المنشأ </label>
+                                        <select id="CountryOrigin"
+                                                name="CountryOrigin"
+                                                class=" form-select "
+                                                placeholder="   بلد المنشأ"
+                                                aria-label=" بلد المنشأ  ">
+                                        </select>
+                                    </div>
+
+                               @*     <div class="col-sm-4">
+
+                                        <label class="form-label" for="CountryOrigin">بلد المنشأ</label>
+                                        <select id="CountryOrigin" name="CountryOrigin" class="form-select">
+                                            <option label=" " data-select2-id="18"></option>
+                                            <option data-select2-id="71">اليمن</option>
+                                            <option data-select2-id="72">بريطانيا</option>
+                                            <option data-select2-id="73">الولايات المتحدة الأمريكية</option>
+                                            <option data-select2-id="74">أوكرانيا</option>
+                                            <option data-select2-id="75">فرنسا</option>
+                                            <option data-select2-id="76">ايطاليا</option>
+                                            <option data-select2-id="77">استراليا</option>
+                                            <option data-select2-id="78">المملكة العربية السعودية</option>
+                                            <option data-select2-id="80">الإمارات العربية المتحدة</option>
+                                            <option data-select2-id="81">ايران </option>
+                                            <option data-select2-id="82">العراق</option>
+                                            <option data-select2-id="83">سوريا  </option>
+                                            <option data-select2-id="84">مصر  </option>
+                                            <option data-select2-id="85">السودان  </option>
+                                            <option data-select2-id="86">    روسيا</option>
+                                            <option data-select2-id="87">    الهند</option>
+                                            <option data-select2-id="88">    الصين</option>
+                                            <option data-select2-id="89">    كندا</option>
+                                            <option data-select2-id="90">    المانيا</option>
+                                            <option data-select2-id="91">    باكستان</option>
+                                        </select>
+                                        <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                    </div>
+*@
+
+
+                                       <div class="col-sm-4">
+                                        <label class="form-label" for="ItemSize"> حجم السلعةالمراد إعادة تعبئة    </label>
+                                        <input type="number"
+                                               name="ItemSize"
+                                               id="ItemSize"
+                                               class="form-control dt-full-name"
+                                               placeholder=" حجم السلعة   " />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                           <div class="col-sm-4">
+                                    <label class="form-label d-block" for="sizeUnit">وحدة القياس </label>
+                                    <div class="input-group">
+                                    
+     
+                   <select id="sizeUnit" name="sizeUnit" class="form-select">
+                          <option label=""></option>
+                  <option value="متر مكعب">متر مكعب</option>
+                  <option value="لتر">لتر</option>
+                  <option value="قدم مكعب ">قدم مكعب </option>   
+                  <option value=" سنتمتر مكعب ">سنتمتر مكعب  </option> 
+                  <option value="  مليميتر مكعب ">مليميتر مكعب   </option>
+                   <!-- أضف المزيد من الخيارات حسب الحاجة -->
+                   </select>
+                      
+
+                                    </div>
+                                </div>
+                                    <div class="col-sm-4 fv-plugins-icon-container">
+                                        <label class="form-label" for="ItmeWeight">وزن السلعةالمراد إعادة تعبئة </label>
+                                        <input type="number"
+                                               name="ItmeWeight"
+                                               id="ItmeWeight"
+                                               class="form-control dt-full-name"
+                                               placeholder="وزن السلعة" />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="weightUnit">وحدة القياس</label>
+                                    <div class="input-group">
+                                        <select id="weightUnit" name="weightUnit" class="form-select">
+
+                                            <option label="">      </option>
+                                            <option value="kg">كيلوغرام (kg)</option>
+                                            <option value="g">جرام (g)</option>
+                                            <option value="ton">طن (ton)</option>
+
+                                            <!-- أضف المزيد من الخيارات حسب الحاجة -->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                    <div class="col-sm-4">
+
+                                        <label class="form-label" for="ProductionDate">تاريخ أنتاج الصنف</label>
+                                        <div class="input-group input-group-merge has-validation">
+                                            <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                                            <input type="date"
+                                                   class="form-control dt-date flatpickr-input"
+                                                   id="ProductionDate"
+                                                   name="ProductionDate"
+                                                   aria-describedby="basicDate2"
+                                                   placeholder="MM/DD/YYYY"
+                                                   aria-label="MM/DD/YYYY">
+                                        </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+
+                                    <div class="col-sm-4 fv-plugins-icon-container">
+
+                                        <label class="form-label" for="EndDate">تاريخ انتهاء الصنف</label>
+                                        <div class="input-group input-group-merge has-validation">
+                                            <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                                            <input type="date"
+                                                   class="form-control dt-date flatpickr-input"
+                                                   id="EndDate" name="EndDate"
+                                                   aria-describedby="basicDate2"
+                                                   placeholder="MM/DD/YYYY"
+                                                   aria-label="MM/DD/YYYY">
+                                        </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label class="form-label" for="ItmeStatus">  حالة السلعة</label>
+                                        <select id="ItmeStatus" name="ItmeStatus" class="form-select">
+                                            <option label="">  </option>
+                                            <option value="0"> نشط  </option>
+                                            <option value="1"> غير نشط </option>
+                                        </select>
+                                    </div>
+
+                                 
+
+
+                                    <div class="d-flex col-12 justify-content">
+                                  <button class="btn btn-label-danger mt-4" data-repeater-delete>
+                                         
+                                            <span class="align-middle">حذف</span>
+                                               <i class="bx bx-trash"></i>
+                                        </button>
+                                  
+                                           
+                                   
+                                    </div>
+                                       
+                                </div>
+                                <hr />
+                                
+                            </div>
+                            </div>
+                             <div class="mb-0">
+                                 <button class="btn btn-primary" data-repeater-create>
+                                                <i class="bx bx-plus"></i>
+                                          <span class="align-middle">إضافة</span>
+                                            </button>
+                                       </div>
+                                      <div class="  mt-4">
+                        </div>
+
+                           <div class="d-flex col-12 justify-content-between">
+                                        <button class="btn btn-label-secondary btn-prev">
+                                            <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                            <span class="d-none d-sm-inline-block">السابق</span>
+                                        </button>
+                                        <button class="btn btn-primary btn-next">
+                                            <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                            <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                        </button>
+                                      
+                                   
+                                    </div>
+                        </div>        
+                        <!--/ نوع السلعة المخزنة -->  
+
+                        <!--/     بيانات السجل التجاري -->
+                        <div id="Commercial-record" class="content">
+                                <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات السجل التجاري  </h4>
+                                <small>ادخال بيانات السجل التجاري  </small>
+                            </div>
+                          
+                            <div class="row g-3">
+                                @*      <div class="col-sm-12">
+                    <label class="form-label" for="Number"> رقم السجل </label>
+                    <div class="input-group input-group-merge">
+                        <input type="number" id="Number" name="Number" class="form-control" placeholder="1" readonly />
+                    </div>
+
+                </div>*@
+                  <div class="col-sm-4">
+                    <label class="form-label" for="Names">  الاسم </label>
+                    <input type="text"
+                            id="Names" 
+                            name="Names"
+                           class="form-control dt-full-name"
+                           placeholder="الاسم" />
+                </div>
+                <div class="col-sm-4">
+          
+            <label class="form-label" for="CRN"> رقم السجل التجاري   </label>
+                    <input type="number"
+                           id="CRN"
+                           name="CRN"
+                           class="form-control dt-full-name" 
+                            placeholder="رقم السجل التجاري"
+                           aria-label=" رقم السجل التجاري"/>
+                </div>
+                    <div class="col-sm-4">
+
+                       <label class="form-label" for="Category">  الفئة</label>
+                                <select id="Category" name="Category" class="form-select">
+                                 <option label=" " data-select2-id="18"></option>
+                                <option value="71">التصدير</option>
+                                <option value="72">استيراد</option>
+                                <option value="73">  المقاولات</option>
+                                <option value="74">الجملة</option>
+                                <option value="75">التجزئة</option>
+                               
+                                </select>
+                                    
+                            </div>
+
+             
+                <div class="col-sm-4">
+                    <label class="form-label" for="placeActivity">  مكان النشاط       </label>
+                    <input type="text"
+                            name="placeActivity"
+                            id="placeActivity"
+                            class="form-control dt-full-name"
+                            placeholder="   مكان النشاط     " />
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-4 fv-plugins-icon-container">
+                    <label class="form-label" for="TradeName"> الاسم التجاري  </label>
+                    <input type="text"
+                           name="TradeName"
+                          id="TradeName"
+                           class="form-control dt-full-name"
+                           placeholder="الاسم التجاري " />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="col-sm-4">
+
+                    <label class="form-label" for="IssueDate">تاريخ الإصدار</label>
+                    <div class="input-group input-group-merge has-validation">
+                        <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                        <input type="text" 
+                        class="form-control dt-date flatpickr-input"
+                               name="IssueDate"
+                                id="IssueDate"
+                               aria-describedby="basicDate2"
+                               placeholder="MM/DD/YYYY"
+                               aria-label="MM/DD/YYYY">
+                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                </div>
+
+   
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                          <!--/     بيانات الرقم الضريبي   -->
+                          <div id="Tax-Number" class="content">
+                                  <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات الرقم الضريبي  </h4>
+                                <small>ادخال بيانات الرقم الضريبي  </small>
+                            </div>
+                           
+                            <div class="row g-3">
+                                @*      <div class="col-sm-12">
+                    <label class="form-label" for="Number"> رقم الضريبي </label>
+                    <div class="input-group input-group-merge">
+                        <input type="number" id="Number" name="Number" class="form-control" placeholder="1" readonly />
+                    </div>
+
+                </div>*@
+                 
+                <div class="col-sm-4">
+                <label class="form-label" for="TIN"> الرقم الضريبي   </label>
+                    <input type="number"
+                           id="TIN"
+                           name="TIN"
+                           class="form-control dt-full-name" 
+                            placeholder="الرقم الضريبي "
+                           aria-label="    الرقم الضريبي  "/>
+                </div>
+                  
+                <div class="col-sm-4">
+                   <label class="form-label" for="DateEndRenewal">تاريخ اخر تجديد</label>
+                    <div class="input-group input-group-merge has-validation">
+                        <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                        <input type="text" 
+                        class="form-control dt-date flatpickr-input"
+                               name="DateEndRenewal"
+                                id="DateEndRenewal"
+                               aria-describedby="basicDate2"
+                               placeholder="MM/DD/YYYY"
+                               aria-label="MM/DD/YYYY">
+                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                </div>
+
+                 <div class="col-sm-4">
+                    <label class="form-label" for="PlaceEmission">   جهة الإصدار       </label>
+                    <input type="text"
+                            name="PlaceEmission"
+                            id="PlaceEmission"
+                            class="form-control dt-full-name"
+                            placeholder="    جهة الإصدار      " />
+                    <span class="text-danger"></span>
+                </div>
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                          <!--/     بيانات الرقم الضريبي   -->    
+                          
+                     <!--/     بيانات مالك المخزن   -->
+                          <div id="Store-owner-Data" class="content">
+                                    <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات مالك المخزن  </h4>
+                                <small>ادخال بيانات مالك المخزن  </small>
+                            </div>
+                          
+                            <div class="row g-3">
+                                @*      <div class="col-sm-12">
+                    <label class="form-label" for="Number"> رقم   مالك المخزن </label>
+                    <div class="input-group input-group-merge">
+                        <input type="number" id="Number" name="Number" class="form-control" placeholder="1" readonly />
+                    </div>
+
+                </div>*@
+                 
+               
+       
+
+                 <div class="col-sm-4">
+                    <label class="form-label" for="StoreOwnerName">   اسم مالك        </label>
+                    <input type="text"
+                            name="StoreOwnerName"
+                            id="StoreOwnerName"
+                            class="form-control dt-full-name"
+                            placeholder="    اسم مالك المخزن      " />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="col-sm-4">
+                    <label class="form-label" for="OwnerNameLast">   اسم  العائلة       </label>
+                    <input type="text"
+                            name="OwnerNameLast"
+                            id="OwnerNameLast"
+                            class="form-control dt-full-name"
+                            placeholder="    اسم   العائلة      " />
+                    <span class="text-danger"></span>
+                </div>
+                
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div> 
+                                </div>
+                              </div>
+                          <!--/     بيانات مالك المخزن     -->    
+                        <!--/      الوثائق المرفقة    -->
+                          <div id="Attached-Document" class="content form-repeater">
+                                       <div class="content-header mb-3">
+                                <h4 class="mb-0">الوثائق المرفقة  </h4>
+                                  </div>
+                                 <div data-repeater-list="group-a">
+                                 <div data-repeater-item>
+                                <small>ادخال الوثائق المرفقة  </small>
+                          
+                          
+                            <div class="row g-3">
+                                    <div class="col-sm-4">
+                    <label class="form-label" for="Id_document"> رقم  الوثيقة المرفقة </label>
+                    <div class="input-group input-group-merge">
+                        <input type="number" id="Id_document" name="Id_document" class="form-control" placeholder="1" readonly />
+                    </div>
+
+                </div>
+                 
+  
+                <div class="col-sm-4">
+                     <label for="formFile" class="form-label"> صورة الوثيقة</label>
+                    <input class="form-control"
+                           type="file"
+                           id="formFile"
+                           name="formFile"
+                           placeholder="إختر صورة">
+                </div>
+                
+                 <div class="col-sm-4">
+                    <label class="form-label" for="discription">     وصف الوثيقة        </label>
+                    <input type="text"
+                            name="discription"
+                            id="discription"
+                            class="form-control dt-full-name"
+                            placeholder="       وصف الوثيقة      " />
+                    <span class="text-danger"></span>
+                </div>
+                
+                                    <div class="d-flex col-12 justify-content">
+                                  <button class="btn btn-label-danger mt-4" data-repeater-delete>
+                                         
+                                            <span class="align-middle">حذف</span>
+                                               <i class="bx bx-trash"></i>
+                                        </button>
+                                     
+                                    </div>
+                                 </div>
+                                <hr />
+                                      
+                            </div>
+                            </div>
+                             <div class="mb-0">
+                                 <button class="btn btn-primary" data-repeater-create>
+                                                <i class="bx bx-plus"></i>
+                                          <span class="align-middle">إضافة</span>
+                                            </button>
+                                       </div>
+                                      <div class="  mt-4">
+                        </div>
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">حفظ</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                          
+                        </div>
+                          <!--/     بيانات مالك المخزن     -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /Validation Wizard -->
+    </div>
+
+
+
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../../assets/vendor/libs/popper/popper.js"></script>
+<script src="../../assets/vendor/js/bootstrap.js"></script>
+<script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+<script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+<script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+<script src="../../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<script src="../../assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+<script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+<script src="../../assets/vendor/libs/select2/select2.js"></script>
+<script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+<script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+<script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+
+<!-- Main JS -->
+<script src="../../assets/js/main.js"></script>
+
+<!-- Page JS -->
+
+<script src="../../assets/js/form-wizard-numbered.js"></script>
+<script src="../../assets/js/Licenses-Repacking-validation.js"></script>
+
+
+<!-- Vendors JS -->
+<script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+<!-- Page JS -->
+<script src="../../assets/js/dashboards-analytics.js"></script>

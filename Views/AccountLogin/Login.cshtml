@@ -1,0 +1,220 @@
+﻿@using WMS.ViewModels
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model LoginVM
+@{
+Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="rtl">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description"
+        content="Frest admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Frest admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Login Page </title>
+    <link rel="apple-touch-icon" href="~/Add/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/Add/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+        rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/vendors/css/vendors-rtl.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/colors.css">
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/components.css">
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/custom-rtl.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="~/Add/app-assets/css-rtl/pages/authentication.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style-rtl.css">
+    <!-- END: Custom CSS-->
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-layout");
+        }
+    </script>
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern  boxicon-layout no-card-shadow 1-column  navbar-sticky 
+             footer-static bg-full-screen-image  blank-page" data-open="click" data-menu="vertical-menu-modern"
+    data-col="1-column">
+    <!-- BEGIN: Content-->
+  
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <a class="nav-link nav-link-label" onclick="myFunction()"><i class="ficon bx bx-sm bx-moon"></i></a>
+            </div>
+            <div class="content-body">
+                       @if (@HttpContextAccessor.HttpContext.Session.Keys.Count() == 0)
+{
+    <p>This is an empty session.</p>
+}
+else
+{
+    <p>This session contains data.</p>
+}
+                <!-- login page start -->
+                <section style="height: 85.5vh;" id="auth-login" class="row flexbox-container">
+                    <div class="col-xl-8 col-12">
+                        <div class="card bg-authentication mb-0">
+                            <div class="row  m-0">
+                                <!-- left section-login -->
+                                <div class="col-md-6 col-12 px-0">
+                                    <div
+                                        class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                                        <div style="padding-top: 0.5rem;" class="card-header  pb-1">
+                                            <div style="height: 5rem;" class="card-title align-content-center">
+                                                <img class="img-fluid" src="~/Add/app-assets/images/pages/الطير1.png"
+                                                    alt="branding logo">
+
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            @*<div class="d-flex flex-md-row flex-column justify-content-around">
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-social btn-google btn-block font-small-3 mr-md-1 mb-md-0 mb-1">
+                                                    <i class="bx bxl-google font-medium-3"></i><span
+                                                        class="pl-50 d-block text-center">Google</span></a>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-social btn-block mt-0 btn-facebook font-small-3">
+                                                    <i class="bx bxl-facebook-square font-medium-3"></i><span
+                                                        class="pl-50 d-block text-center">Facebook</span></a>
+                                            </div>*@
+
+                                            <div class="divider">
+
+                                                <div class="divider-text text-uppercase text-muted"> تسجيل الدخول </div>
+                                            </div>
+                                             <form id="formAuthentication" class="mb-3" asp-action="Login" asp-controller="AccountLogin" method="POST">
+                        <div class="alert-danger" asp-validation-summary="All"></div>
+                        <div class="mb-3">
+                            <label asp-for="UserName" class="form-label">اسم المستخدم</label>
+                            <span asp-validation-for="UserName" class="alert-danger"></span>
+                            <input type="text"
+                                   class="form-control"
+                                   id="email"
+                                   asp-for="UserName"
+                                   placeholder="ادخل اسم المستخدم"
+                                   autofocus />
+                        </div>
+                        <div class="form-password-toggle mb-3">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label" asp-for="Password">كلمة السر</label>
+                                <span asp-validation-for="Password" class="alert-danger"></span>
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input type="password"
+                                       id="password"
+                                       class="form-control"
+                                       asp-for="Password"
+                                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                       aria-describedby="password" />
+                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" asp-for="RememberMe" id="remember-me" />
+                                <label class="form-check-label" for="remember-me" asp-for="RememberMe">تذكرني</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-grid w-100" type="submit">تسجيل الدخول</button>
+                        </div>
+                    </form>
+       
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- right section image -->
+                                <div class="col-md-6 d-md-block  d-none text-center align-self-center p-3">
+                                    <img class="img-fluid" src="~/Add/app-assets/images/pages/login.png"
+                                        alt="branding logo">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- login page ends -->
+
+            </div>
+        </div>
+ 
+    <!-- END: Content-->
+
+   <!-- build:js assets/vendor/js/core.js -->
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+    <script src="../../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../../assets/js/pages-auth.js"></script>
+    @*
+    <!-- BEGIN: Vendor JS-->
+    <script src="~/Add/app-assets/vendors/js/vendors.min.js"></script>
+    <script src="~/Add/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="~/Add/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="~/Add/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="~/Add/app-assets/js/core/app-menu.js"></script>
+    <script src="~/Add/app-assets/js/core/app.js"></script>
+    <script src="~/Add/app-assets/js/scripts/components.js"></script>
+    <script src="~/Add/app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <!-- END: Page JS-->
+    *@
+</body>
+<!-- END: Body-->
+
+</html>
+
+
+
+<!-- ================================================================= -->

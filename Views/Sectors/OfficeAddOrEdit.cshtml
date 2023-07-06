@@ -1,0 +1,214 @@
+﻿
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">الصفحة الرئيسية / </span>   المكاتب </h4>
+
+
+
+    <!-- عرض المكاتب -->
+    <!-- DataTable with Buttons -->
+    <div class="card">
+        <div class="card-datatable table-responsive pt-0">
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                <div class="card-header flex-column flex-md-row">
+                    <div class="head-label text-center">
+                        <h5 class="card-title mb-0">عرض المكاتب</h5>
+                    </div>
+                    <div class="dt-action-buttons text-end pt-3 pt-md-0">
+                        <div class="dt-buttons">
+
+                            <button class="dt-button buttons-collection btn btn-label-primary dropdown-toggle me-2" tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="true" aria-expanded="false">
+                                <span>
+                                    <i class="bx bx-export me-sm-2"></i> <span class="d-none d-sm-inline-block">تصدير</span>
+                                </span>
+                            </button>
+                            <a asp-action="AddOrEdit">
+                                <button class="dt-button create-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button">
+
+                                    <span><i class="bx bx-plus me-sm-2"></i> <span class="d-none d-sm-inline-block">اضافة مكاتب  </span></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+
+                        <label class="form-label" for="itemState"> عددالصفوف</label>
+                        <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-select">
+                            <option value="7">7</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label" for="itemState"> بحث بحسب</label>
+                        <select id="searchsele" name="search" class="form-select">
+                            <option value=""> الكل </option>
+                            <option value="3">اسم المكتب  </option>
+                            <option value="1">رقم المكتب </option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="search"> بحث </label>
+
+                        <div id="DataTables_Table_0_filter" class="input-group input-group-merge dataTables_filter">
+                            <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                            <input id="seaarchinput"
+                                   type="search"
+                                   class="form-control"
+                                   placeholder="..."
+                                   aria-label=""
+                                   aria-controls="DataTables_Table_0" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Scrollable -->
+                <div class="card-datatable text-nowrap">
+                    <table class="dt-scrollableTable table table-bordered">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    رقم المكتب
+                                </th>
+
+                                <th>
+                                    إسم المكتب
+                                </th>
+                                <th>
+                                    عنوان المكتب
+                                </th>
+                                <th>
+                                    حالة
+                                </th>
+
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <!--/ Scrollable -->
+            <!--/ Basic Pagination -->
+
+
+            <div class="demo-inline-spacing">
+                <nav id="page" aria-label="Page navigation" class="mt-5 me-4">
+                    <ul class="pagination pagination-sm justify-content-end ">
+                        <li class="page-item prev mr">
+                            <a class="page-link" href="javascript:void(0);">
+                                <i class="tf-icon bx bx-chevrons-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="javascript:void(0);">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:void(0);">2</a>
+                        </li>
+                        <li class="page-item ">
+                            <a class="page-link" href="javascript:void(0);">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:void(0);">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:void(0);">5</a>
+                        </li>
+                        <li class="page-item next">
+                            <a class="page-link" href="javascript:void(0);">
+                                <i class="tf-icon bx bx-chevrons-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- اضافة مكتب -->
+<!-- Offcanvas to add AItemGroup -->
+
+<div class="offcanvas offcanvas-end show" id="add-new-record" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="exampleModalLabel"> إضافة مكتب    </h5>
+        <a asp-action="OfficeIndex"> <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button></a>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+
+        <form asp-action="AddOrEditViolations" class="add-new-record row g-2 pt-0 fv-plugins-bootstrap5 fv-plugins-framework" id="form-add-new-record" onsubmit="return false" novalidate="novalidate">
+
+
+            <div class="col-sm-12">
+                <label class="form-label"> رقم المكتب</label>
+                <div class="input-group input-group-merge">
+                    <input type="number" id="VNumber" name="VNumber" class="form-control" placeholder="1" readonly />
+                </div>
+            </div>
+
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label"> اسم المكتب </label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text">
+
+                    </span>
+                    <input type="text" id="basicFullname" class="form-control dt-full-name" name="basicFullname" placeholder="اسم المكتب   " aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label"> عنوان المكتب </label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text">
+
+                    </span>
+                    <input type="text" id="basicFullname" class="form-control dt-full-name" name="basicFullname" placeholder="عنوان المكتب   " aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+            <div class="col-sm-12">
+
+                <label for="Sector" class="form-label"> نوع القطاع   </label>
+                <div class="input-group">
+                    <select id="Sector"
+                            name="Sector"
+                            class=" form-select form-select-lg"
+                            data-allow-clear="true">
+                    </select>
+                </div>
+            </div>
+            <div class="sm-12">
+                <label class="form-label"> حالة القطاع </label>
+                <select id="select2Basic"
+                        required
+                        class=" form-select form-select-lg"
+                        placeholder="حالة المكتب">
+                    <option value=NULL>يرجى اختيار حالة المكتب</option>
+                    <option value="True"> نشط </option>
+                    <option value="False"> غير نشط </option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+                <button type="submit" class="btn btn-primary " id="type-success" name="submitButton">حفظ</button>
+                <button class="btn btn-label-secondary " type="reset" data-bs-dismiss="offcanvas"> إلغاء</button>
+            </div>
+
+        </form>
+    </div>
+</div>

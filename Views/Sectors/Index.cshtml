@@ -1,0 +1,122 @@
+﻿@model IEnumerable<WMS.Models.Sector>
+
+@using WMS.Models
+@{
+    
+    ViewBag.Title = "Index";
+    ViewData["Active"] = "Add";
+    ViewData["Open"] = "open";
+}
+
+@{
+  
+
+}
+
+<!-- Table -->
+<div class="card">
+    <div class="card-header ">
+        <div class="head-label flex ">
+
+            <h5 class="card-title mb-0">القطاعات</h5>
+
+        </div><div class="dt-action-buttons text-end pt-3 pt-md-0">
+            <div class="form-group">
+                <div class="col-md-3">
+                </div>
+                <div class="dt-buttons">
+
+                    <button asp-action="Create" type="button" class="btn btn-label-primary" data-bs-toggle="offcanvas"
+                            data-bs-target="#AddSector">
+                        <span><i class="bx bx-plus me-sm-2"></i> <span class="d-none d-sm-inline-block">اضافة قطاع  </span></span>
+                    </button>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table id="myTable" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+
+                    <th>
+                        رقم القطاع
+                    </th>
+
+                    <th>
+                        إسم القطاع
+                    </th>
+                    <th>
+                        وصف القطاع
+                    </th>
+                    @*  <th>
+                    حالة
+                    </th>*@
+
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    var modelName = "EditSector-" + item.SectorId.ToString();
+                    <tr>
+                        <td>@item.SectorId</td>
+                        <td>@item.SectorName </td>
+                        <td>@item.Discription</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button class="dropdown-item me-1" asp-controller="Sectors" asp-action="Edit222" asp-route-id="@item.SectorId" type="button" class="btn btn-icon "
+                                            data-bs-toggle="offcanvas"
+                                            data-bs-target="@(" #EditSector-" + item.SectorId.ToString())"
+                                            data-url="@Url.Action($"Edit222/{item.SectorId}")">
+
+
+                                        <i class="icon-pen-to-square-solid"></i>
+
+
+                                        تعديل
+                                    </button>
+
+
+                                    <button class="dropdown-item me-1" type="button" data-bs-toggle="modal"
+                                            data-bs-target="@(" #delete-" + item.SectorId)" data-url="@Url.Action($" Delete/{item.SectorId}")">
+                                        حذف
+
+                                        <i class="icon-trash-can-solid"></i>
+                                        @await Html.PartialAsync("_DeleteSectorPartialView", item)
+                                    </button>
+
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    @await Html.PartialAsync("_EditSectorPartialView", item)
+
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+@await Html.PartialAsync("_AddSectorPartialView",new Sector())
+<!--/ table -->
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+
+    }

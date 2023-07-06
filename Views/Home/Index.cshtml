@@ -1,0 +1,888 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Content -->
+      
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+         <div class="col-12 col-md-6 col-lg-6 col-xxl-6 col-xl-6 mt-5">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">الأصناف المضافه مؤخراً</h5>
+                <div class="dropdown">
+                    <button class="btn p-0"
+                            type="button"
+                            id="marketingOptions"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                        <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="marketingOptions">
+
+                        <a class="dropdown-item" href="javascript:void(0);">تحديث</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="gap-3 d-flex flex-wrap justify-content-between align-items-center">
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table border-top">
+                        <thead>
+                            <tr>
+                                <th>الصنف</th>
+                                <th>النسبة</th>
+                                <th>السعر</th>
+                                <th>الحالة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            @*@for (var i = 0; i < 2; i++)*@
+                        @*    @foreach (var item in Model.ItemsAdded)
+                            {*@
+                                <tr>
+                                    <td class="text-nowrap">
+
+                                @*   //     @Html.DisplayFor(itemModel => item.Item.Name)*@
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <i class="bx bx-trending-up text-success me-2"></i>
+
+                                      @*  @Html.DisplayFor(itemModel => item.Item.Rate)%*@
+                                    </td>
+                                    <td>
+@*
+                                        @Html.DisplayFor(itemModel => item.Price)*@
+                                    </td>
+                                    <td>
+                                        <span class="text-success">
+@*
+                                            @Html.DisplayFor(itemModel => item.Item.ItemState)*@
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn p-0"
+                                                    type="button"
+                                                    id="action2"
+                                                    data-bs-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                <i class="bx bx-dots-vertical-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="action2">
+                                                <a class="dropdown-item" href="javascript:void(0);">تعديل</a>
+                                                <a class="dropdown-item" href="javascript:void(0);">حذف</a>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                      @*      }*@
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--/ Marketing Campaigns -->
+
+    </div>
+        <div class="col-12 col-md-6 col-lg-6 col-xxl-6 col-xl-6 mt-5">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">طلبات التراخيص</h5>
+                </div>
+                <div class="card-body d-flex justify-content-between align-items-end">
+                    <div class="gap-3 d-flex justify-content-between align-items-center w-100">
+                        <div class="align-content-center d-flex" style="position: relative;">
+                            <div class="chart-report" data-color="danger" data-series="25" style="min-height: 40.7px;">
+                                <div id="apexchartsuzwowl98" class="apexcharts-canvas apexchartsuzwowl98 apexcharts-theme-light" style="width: 100px; height: 47.7px;">
+                                    <svg id="SvgjsSvg2697" width="40" height="47.7" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG2699" class="apexcharts-inner apexcharts-graphical" transform="translate(-15, -10)"><defs id="SvgjsDefs2698"><clipPath id="gridRectMaskuzwowl98"><rect id="SvgjsRect2701" width="71" height="82" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskuzwowl98"></clipPath><clipPath id="nonForecastMaskuzwowl98"></clipPath><clipPath id="gridRectMarkerMaskuzwowl98"><rect id="SvgjsRect2702" width="69" height="84" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG2703" class="apexcharts-radialbar"><g id="SvgjsG2704"><g id="SvgjsG2705" class="apexcharts-tracks"><g id="SvgjsG2706" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 32.497365148808946 17.40341486408048" fill="none" fill-opacity="1" stroke="rgba(233,236,238,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="3.628273170731709" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 32.497365148808946 17.40341486408048"></path></g></g><g id="SvgjsG2708"><g id="SvgjsG2710" class="apexcharts-series apexcharts-radial-series" seriesName="Progress" rel="1" data:realIndex="0"><path id="SvgjsPath2711" d="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 0 1 47.596585365853656 32.5" fill="none" fill-opacity="0.85" stroke="rgba(255,91,92,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="3.7404878048780503" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="90" data:value="25" index="0" j="0" data:pathOrig="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 0 1 47.596585365853656 32.5"></path></g><circle id="SvgjsCircle2709" r="8.282448780487805" cx="32.5" cy="32.5" class="apexcharts-radialbar-hollow" fill="transparent"></circle></g></g></g><line id="SvgjsLine2712" x1="0" y1="0" x2="65" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine2713" x1="0" y1="0" x2="65" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG2700" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div>
+                                </div>
+                            </div>
+                            <div class="chart-info ms-2">
+                                <h5 class="mb-0"> المعلقة</h5>
+                                <small class="text-muted">19</small>
+                            </div>
+                            <div class="resize-triggers">
+                                <div class="expand-trigger">
+                                    <div style="width: 85px; height: 49px;">
+                                    </div>
+                                </div><div class="contract-trigger"></div>
+                            </div>
+                        </div>
+                        <div class="align-content-center d-flex" style="position: relative;">
+                            <div class="chart-report" data-color="primary" data-series="65" style="min-height: 47.7px;"><div id="apexchartscplj7agi" class="apexcharts-canvas apexchartscplj7agi apexcharts-theme-light" style="width: 40px; height: 47.7px;"><svg id="SvgjsSvg3495" width="40" height="47.7" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG3497" class="apexcharts-inner apexcharts-graphical" transform="translate(-15, -10)"><defs id="SvgjsDefs3496"><clipPath id="gridRectMaskcplj7agi"><rect id="SvgjsRect3499" width="71" height="82" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskcplj7agi"></clipPath><clipPath id="nonForecastMaskcplj7agi"></clipPath><clipPath id="gridRectMarkerMaskcplj7agi"><rect id="SvgjsRect3500" width="69" height="84" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG3501" class="apexcharts-radialbar"><g id="SvgjsG3502"><g id="SvgjsG3503" class="apexcharts-tracks"><g id="SvgjsG3504" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 32.497365148808946 17.40341486408048" fill="none" fill-opacity="1" stroke="rgba(233,236,238,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="3.628273170731709" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 32.497365148808946 17.40341486408048"></path></g></g><g id="SvgjsG3506"><g id="SvgjsG3508" class="apexcharts-series apexcharts-radial-series" seriesName="Progress" rel="1" data:realIndex="0"><path id="SvgjsPath3509" d="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 20.28660588199226 41.37355023802316" fill="none" fill-opacity="0.85" stroke="rgba(90,141,238,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="3.7404878048780503" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="234" data:value="65" index="0" j="0" data:pathOrig="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 20.28660588199226 41.37355023802316"></path></g><circle id="SvgjsCircle3507" r="8.282448780487805" cx="32.5" cy="32.5" class="apexcharts-radialbar-hollow" fill="transparent"></circle></g></g></g><line id="SvgjsLine3510" x1="0" y1="0" x2="65" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine3511" x1="0" y1="0" x2="65" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG3498" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                            <div class="chart-info ms-2">
+                                <h5 class="mb-0">الجديد</h5>
+                                <small class="text-muted">300</small>
+                            </div>
+                            <div class="resize-triggers"><div class="expand-trigger"><div style="width: 85px; height: 49px;"></div></div><div class="contract-trigger"></div>
+                        </div>
+                        </div>
+                        <div class="align-content-center d-flex" style="position: relative;">
+                            <div class="chart-report" data-color="info" data-series="50" style="min-height: 47.7px;">
+                                <div id="apexchartsw7qj8ngw" class="apexcharts-canvas apexchartsw7qj8ngw apexcharts-theme-light" style="width: 40px; height: 47.7px;">
+                                    <svg id="SvgjsSvg2714" width="40" height="47.7" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;">
+                                        <g id="SvgjsG2716" class="apexcharts-inner apexcharts-graphical" transform="translate(-15, -10)">
+                                            <defs id="SvgjsDefs2715">
+                                                <clipPath id="gridRectMaskw7qj8ngw">
+                                                    <rect id="SvgjsRect2718" width="71" height="82" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect>
+                                                </clipPath><clipPath id="forecastMaskw7qj8ngw"></clipPath><clipPath id="nonForecastMaskw7qj8ngw"></clipPath><clipPath id="gridRectMarkerMaskw7qj8ngw"><rect id="SvgjsRect2719" width="69" height="84" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath>
+                                            </defs><g id="SvgjsG2720" class="apexcharts-radialbar"><g id="SvgjsG2721"><g id="SvgjsG2722" class="apexcharts-tracks"><g id="SvgjsG2723" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 32.497365148808946 17.40341486408048" fill="none" fill-opacity="1" stroke="rgba(233,236,238,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="3.628273170731709" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 1 1 32.497365148808946 17.40341486408048"></path></g></g><g id="SvgjsG2725"><g id="SvgjsG2727" class="apexcharts-series apexcharts-radial-series" seriesName="Progress" rel="1" data:realIndex="0"><path id="SvgjsPath2728" d="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 0 1 32.5 47.596585365853656" fill="none" fill-opacity="0.85" stroke="rgba(0,207,221,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="3.7404878048780503" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="180" data:value="50" index="0" j="0" data:pathOrig="M 32.5 17.40341463414634 A 15.09658536585366 15.09658536585366 0 0 1 32.5 47.596585365853656"></path></g><circle id="SvgjsCircle2726" r="8.282448780487805" cx="32.5" cy="32.5" class="apexcharts-radialbar-hollow" fill="transparent"></circle></g></g></g><line id="SvgjsLine2729" x1="0" y1="0" x2="65" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine2730" x1="0" y1="0" x2="65" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line>
+                                        </g>
+                                        <g id="SvgjsG2717" class="apexcharts-annotations"></g>
+                                    </svg><div class="apexcharts-legend"></div>
+                                </div>
+                            </div>
+                            <div class="chart-info ms-2">
+                                <h5 class="mb-0">المقيدة</h5>
+                                <small class="text-muted">13</small>
+                            </div>
+                            <div class="resize-triggers">
+                                <div class="expand-trigger">
+                                    <div style="width: 85px; height: 49px;"></div>
+                                </div><div class="contract-trigger"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+     <div class="mt-3"></div>
+
+    </div>
+    <div class="row">
+
+
+
+           @* <div class="col-xxl-3 col-md-6 col-lg-3 col-xl-3 mb-4">
+
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">تقارير إدارة المخزون السلعي</h5>
+                    <div class="dropdown">
+                        <button class="btn p-0" type="button" id="visitsOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="visitsOptions">
+                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" style="position: relative;">
+                    <div id="visitsRadialChart" style="min-height: 227.5px;">
+                        <div id="apexcharts3an73xef" class="apexcharts-canvas
+apexcharts3an73xef apexcharts-theme-light"
+                             style="width: 338px; height: 227.5px;">
+                            <svg id="SvgjsSvg2539"
+                                 width="338"
+                                 height="227.5000011444092"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xmlns:svgjs="http://svgjs.dev"
+                                 class="apexcharts-svg"
+                                 xmlns:data="ApexChartsNS"
+                                 transform="translate(0, 0)"
+                                 style="background: transparent;">
+                                <foreignObject x="0" y="0" width="338" height="227.5000011444092">
+                                    <div class="apexcharts-legend apexcharts-align-center apx-legend-position-bottom"
+                                         xmlns="http://www.w3.org/1999/xhtml" style="inset: auto 0px 1px; position: absolute; max-height: 135px;">
+                                        <div class="apexcharts-legend-series" rel="1"
+                                             seriesname="Target"
+                                             data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="1" data:collapsed="false" style="background: rgb(90, 141, 238) !important; color: rgb(90, 141, 238); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="1" i="0" data:default-text="Target" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Target</span>
+                                        </div><div class="apexcharts-legend-series" rel="2" seriesname="Mart" data:collapsed="false" style="margin: 2px 15px;"><span class="apexcharts-legend-marker" rel="2" data:collapsed="false" style="background: rgb(255, 91, 92) !important; color: rgb(255, 91, 92); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="2" i="1" data:default-text="Mart" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Mart</span></div><div class="apexcharts-legend-series" rel="3" seriesname="Ebay" data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="3" data:collapsed="false" style="background: rgb(253, 172, 65) !important; color: rgb(253, 172, 65); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="3" i="2" data:default-text="Ebay" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">
+                                                Ebay
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <style type="text/css">
+
+                                        .apexcharts-legend {
+                                            display: flex;
+                                            overflow: auto;
+                                            padding: 0 10px;
+                                        }
+
+                                            .apexcharts-legend.apx-legend-position-bottom, .apexcharts-legend.apx-legend-position-top {
+                                                flex-wrap: wrap
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                flex-direction: column;
+                                                bottom: 0;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                justify-content: flex-start;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+                                                justify-content: center;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right, .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+                                                justify-content: flex-end;
+                                            }
+
+                                        .apexcharts-legend-series {
+                                            cursor: pointer;
+                                            line-height: normal;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom .apexcharts-legend-series, .apexcharts-legend.apx-legend-position-top .apexcharts-legend-series {
+                                            display: flex;
+                                            align-items: center;
+                                        }
+
+                                        .apexcharts-legend-text {
+                                            position: relative;
+                                            font-size: 14px;
+                                        }
+
+                                            .apexcharts-legend-text *, .apexcharts-legend-marker * {
+                                                pointer-events: none;
+                                            }
+
+                                        .apexcharts-legend-marker {
+                                            position: relative;
+                                            display: inline-block;
+                                            cursor: pointer;
+                                            margin-right: 3px;
+                                            border-style: solid;
+                                        }
+
+                                        .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series, .apexcharts-legend.apexcharts-align-left .apexcharts-legend-series {
+                                            display: inline-block;
+                                        }
+
+                                        .apexcharts-legend-series.apexcharts-no-click {
+                                            cursor: auto;
+                                        }
+
+                                        .apexcharts-legend .apexcharts-hidden-zero-series, .apexcharts-legend .apexcharts-hidden-null-series {
+                                            display: none !important;
+                                        }
+
+                                        .apexcharts-inactive-legend {
+                                            opacity: 0.45;
+                                        }</style>
+                                </foreignObject>
+                                <g id="SvgjsG2541" class="apexcharts-inner apexcharts-graphical" transform="translate(12, -20)"><defs id="SvgjsDefs2540"><clipPath id="gridRectMask3an73xef">
+
+                                    <rect id="SvgjsRect2543" width="322" height="230" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                        </rect></clipPath><clipPath id="forecastMask3an73xef"></clipPath><clipPath id="nonForecastMask3an73xef"></clipPath><clipPath id="gridRectMarkerMask3an73xef">
+                                            <rect id="SvgjsRect2544" width="320" height="232" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                                </rect></clipPath></defs><g id="SvgjsG2545" class="apexcharts-radialbar"><g id="SvgjsG2546"><g id="SvgjsG2547" class="apexcharts-tracks"><g id="SvgjsG2548" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798"></path></g><g id="SvgjsG2550" class="apexcharts-radialbar-track apexcharts-track" rel="2"><path id="apexcharts-radialbarTrack-1" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846"></path></g><g id="SvgjsG2552" class="apexcharts-radialbar-track apexcharts-track" rel="3"><path id="apexcharts-radialbarTrack-2" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757"></path></g></g><g id="SvgjsG2554"><g id="SvgjsG2559" class="apexcharts-series apexcharts-radial-series" seriesName="Target" rel="1" data:realIndex="0"><path id="SvgjsPath2560" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001" fill="none" fill-opacity="0.85" stroke="rgba(90,141,238,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="270" data:value="75" index="0" j="0" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001"></path></g><g id="SvgjsG2561" class="apexcharts-series apexcharts-radial-series" seriesName="Mart" rel="2" data:realIndex="1"><path id="SvgjsPath2562" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683" fill="none" fill-opacity="0.85" stroke="rgba(255,91,92,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-1" data:angle="288" data:value="80" index="0" j="1" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683"></path></g><g id="SvgjsG2563" class="apexcharts-series apexcharts-radial-series" seriesName="Ebay" rel="3" data:realIndex="2"><path id="SvgjsPath2564" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554" fill="none" fill-opacity="0.85" stroke="rgba(253,172,65,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-2" data:angle="306" data:value="85" index="0" j="2" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554"></path></g><circle id="SvgjsCircle2555" r="52.41579573170733" cx="158" cy="114" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG2556" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText2557" font-family="IBM Plex Sans" x="158" y="139" text-anchor="middle" dominant-baseline="auto" font-size="15px" font-weight="400" fill="#69809a" class="apexcharts-text apexcharts-datalabel-label" style="font-family: &quot;IBM Plex Sans&quot;">Total Visits</text>
+                                    <text id="SvgjsText2558" font-family="Rubik" x="158" y="115" text-anchor="middle" dominant-baseline="auto" font-size="2rem" font-weight="500" fill="#516377" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Rubik;">80%</text></g></g></g></g><line id="SvgjsLine2565" x1="0" y1="0" x2="316" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine2566" x1="0" y1="0" x2="316" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g>
+                                <g id="SvgjsG2542" class="apexcharts-annotations"></g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resize-triggers"><div class="expand-trigger">
+                        <div style="width: 383px; height: 251px;"></div></div><div class="contract-trigger"></div></div>
+                </div>
+            </div>
+        </div>*@
+@*      <div class="col-xxl-3 col-md-6 col-lg-3 col-xl-3 mb-4">
+
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">إجمالي الطلبات التراخيص     </h5>
+                    <div class="dropdown">
+                        <button class="btn p-0" type="button" id="visitsOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="visitsOptions">
+                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" style="position: relative;">
+                    <div id="visitsRadialChart" style="min-height: 227.5px;">
+                        <div id="apexcharts3an73xef" class="apexcharts-canvas
+apexcharts3an73xef apexcharts-theme-light"
+                             style="width: 338px; height: 227.5px;">
+                            <svg id="SvgjsSvg2539"
+                                 width="338"
+                                 height="227.5000011444092"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xmlns:svgjs="http://svgjs.dev"
+                                 class="apexcharts-svg"
+                                 xmlns:data="ApexChartsNS"
+                                 transform="translate(0, 0)"
+                                 style="background: transparent;">
+                                <foreignObject x="0" y="0" width="338" height="227.5000011444092">
+                                    <div class="apexcharts-legend apexcharts-align-center apx-legend-position-bottom"
+                                         xmlns="http://www.w3.org/1999/xhtml" style="inset: auto 0px 1px; position: absolute; max-height: 135px;">
+                                        <div class="apexcharts-legend-series" rel="1"
+                                             seriesname="Target"
+                                             data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="1" data:collapsed="false" style="background: rgb(90, 141, 238) !important; color: rgb(90, 141, 238); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="1" i="0" data:default-text="Target" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Target</span>
+                                        </div><div class="apexcharts-legend-series" rel="2" seriesname="Mart" data:collapsed="false" style="margin: 2px 15px;"><span class="apexcharts-legend-marker" rel="2" data:collapsed="false" style="background: rgb(255, 91, 92) !important; color: rgb(255, 91, 92); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="2" i="1" data:default-text="Mart" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Mart</span></div><div class="apexcharts-legend-series" rel="3" seriesname="Ebay" data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="3" data:collapsed="false" style="background: rgb(253, 172, 65) !important; color: rgb(253, 172, 65); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="3" i="2" data:default-text="Ebay" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">
+                                                Ebay
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <style type="text/css">
+
+                                        .apexcharts-legend {
+                                            display: flex;
+                                            overflow: auto;
+                                            padding: 0 10px;
+                                        }
+
+                                            .apexcharts-legend.apx-legend-position-bottom, .apexcharts-legend.apx-legend-position-top {
+                                                flex-wrap: wrap
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                flex-direction: column;
+                                                bottom: 0;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                justify-content: flex-start;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+                                                justify-content: center;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right, .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+                                                justify-content: flex-end;
+                                            }
+
+                                        .apexcharts-legend-series {
+                                            cursor: pointer;
+                                            line-height: normal;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom .apexcharts-legend-series, .apexcharts-legend.apx-legend-position-top .apexcharts-legend-series {
+                                            display: flex;
+                                            align-items: center;
+                                        }
+
+                                        .apexcharts-legend-text {
+                                            position: relative;
+                                            font-size: 14px;
+                                        }
+
+                                            .apexcharts-legend-text *, .apexcharts-legend-marker * {
+                                                pointer-events: none;
+                                            }
+
+                                        .apexcharts-legend-marker {
+                                            position: relative;
+                                            display: inline-block;
+                                            cursor: pointer;
+                                            margin-right: 3px;
+                                            border-style: solid;
+                                        }
+
+                                        .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series, .apexcharts-legend.apexcharts-align-left .apexcharts-legend-series {
+                                            display: inline-block;
+                                        }
+
+                                        .apexcharts-legend-series.apexcharts-no-click {
+                                            cursor: auto;
+                                        }
+
+                                        .apexcharts-legend .apexcharts-hidden-zero-series, .apexcharts-legend .apexcharts-hidden-null-series {
+                                            display: none !important;
+                                        }
+
+                                        .apexcharts-inactive-legend {
+                                            opacity: 0.45;
+                                        }</style>
+                                </foreignObject>
+                                <g id="SvgjsG2541" class="apexcharts-inner apexcharts-graphical" transform="translate(12, -20)"><defs id="SvgjsDefs2540"><clipPath id="gridRectMask3an73xef">
+
+                                    <rect id="SvgjsRect2543" width="322" height="230" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                        </rect></clipPath><clipPath id="forecastMask3an73xef"></clipPath><clipPath id="nonForecastMask3an73xef"></clipPath><clipPath id="gridRectMarkerMask3an73xef">
+                                            <rect id="SvgjsRect2544" width="320" height="232" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                                </rect></clipPath></defs><g id="SvgjsG2545" class="apexcharts-radialbar"><g id="SvgjsG2546"><g id="SvgjsG2547" class="apexcharts-tracks"><g id="SvgjsG2548" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798"></path></g><g id="SvgjsG2550" class="apexcharts-radialbar-track apexcharts-track" rel="2"><path id="apexcharts-radialbarTrack-1" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846"></path></g><g id="SvgjsG2552" class="apexcharts-radialbar-track apexcharts-track" rel="3"><path id="apexcharts-radialbarTrack-2" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757"></path></g></g><g id="SvgjsG2554"><g id="SvgjsG2559" class="apexcharts-series apexcharts-radial-series" seriesName="Target" rel="1" data:realIndex="0"><path id="SvgjsPath2560" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001" fill="none" fill-opacity="0.85" stroke="rgba(90,141,238,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="270" data:value="75" index="0" j="0" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001"></path></g><g id="SvgjsG2561" class="apexcharts-series apexcharts-radial-series" seriesName="Mart" rel="2" data:realIndex="1"><path id="SvgjsPath2562" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683" fill="none" fill-opacity="0.85" stroke="rgba(255,91,92,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-1" data:angle="288" data:value="80" index="0" j="1" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683"></path></g><g id="SvgjsG2563" class="apexcharts-series apexcharts-radial-series" seriesName="Ebay" rel="3" data:realIndex="2"><path id="SvgjsPath2564" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554" fill="none" fill-opacity="0.85" stroke="rgba(253,172,65,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-2" data:angle="306" data:value="85" index="0" j="2" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554"></path></g><circle id="SvgjsCircle2555" r="52.41579573170733" cx="158" cy="114" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG2556" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText2557" font-family="IBM Plex Sans" x="158" y="139" text-anchor="middle" dominant-baseline="auto" font-size="15px" font-weight="400" fill="#69809a" class="apexcharts-text apexcharts-datalabel-label" style="font-family: &quot;IBM Plex Sans&quot;">Total Visits</text>
+                                    <text id="SvgjsText2558" font-family="Rubik" x="158" y="115" text-anchor="middle" dominant-baseline="auto" font-size="2rem" font-weight="500" fill="#516377" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Rubik;">80%</text></g></g></g></g><line id="SvgjsLine2565" x1="0" y1="0" x2="316" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine2566" x1="0" y1="0" x2="316" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g>
+                                <g id="SvgjsG2542" class="apexcharts-annotations"></g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resize-triggers"><div class="expand-trigger">
+                        <div style="width: 383px; height: 251px;"></div></div><div class="contract-trigger"></div></div>
+                </div>
+            </div>
+        </div>*@
+ 
+       
+         @*<div class="col-xxl-3 col-md-6 col-lg-3 col-xl-3 mb-4">
+
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">تقارير إدارة التراخيص المخازن</h5>
+                    <div class="dropdown">
+                        <button class="btn p-0" type="button" id="visitsOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="visitsOptions">
+                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" style="position: relative;">
+                    <div id="visitsRadialChart" style="min-height: 227.5px;">
+                        <div id="apexcharts3an73xef" class="apexcharts-canvas
+apexcharts3an73xef apexcharts-theme-light"
+                             style="width: 338px; height: 227.5px;">
+                            <svg id="SvgjsSvg2539"
+                                 width="338"
+                                 height="227.5000011444092"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xmlns:svgjs="http://svgjs.dev"
+                                 class="apexcharts-svg"
+                                 xmlns:data="ApexChartsNS"
+                                 transform="translate(0, 0)"
+                                 style="background: transparent;">
+                                <foreignObject x="0" y="0" width="338" height="227.5000011444092">
+                                    <div class="apexcharts-legend apexcharts-align-center apx-legend-position-bottom"
+                                         xmlns="http://www.w3.org/1999/xhtml" style="inset: auto 0px 1px; position: absolute; max-height: 135px;">
+                                        <div class="apexcharts-legend-series" rel="1"
+                                             seriesname="Target"
+                                             data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="1" data:collapsed="false" style="background: rgb(90, 141, 238) !important; color: rgb(90, 141, 238); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="1" i="0" data:default-text="Target" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Target</span>
+                                        </div><div class="apexcharts-legend-series" rel="2" seriesname="Mart" data:collapsed="false" style="margin: 2px 15px;"><span class="apexcharts-legend-marker" rel="2" data:collapsed="false" style="background: rgb(255, 91, 92) !important; color: rgb(255, 91, 92); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="2" i="1" data:default-text="Mart" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Mart</span></div><div class="apexcharts-legend-series" rel="3" seriesname="Ebay" data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="3" data:collapsed="false" style="background: rgb(253, 172, 65) !important; color: rgb(253, 172, 65); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="3" i="2" data:default-text="Ebay" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">
+                                                Ebay
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <style type="text/css">
+
+                                        .apexcharts-legend {
+                                            display: flex;
+                                            overflow: auto;
+                                            padding: 0 10px;
+                                        }
+
+                                            .apexcharts-legend.apx-legend-position-bottom, .apexcharts-legend.apx-legend-position-top {
+                                                flex-wrap: wrap
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                flex-direction: column;
+                                                bottom: 0;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                justify-content: flex-start;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+                                                justify-content: center;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right, .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+                                                justify-content: flex-end;
+                                            }
+
+                                        .apexcharts-legend-series {
+                                            cursor: pointer;
+                                            line-height: normal;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom .apexcharts-legend-series, .apexcharts-legend.apx-legend-position-top .apexcharts-legend-series {
+                                            display: flex;
+                                            align-items: center;
+                                        }
+
+                                        .apexcharts-legend-text {
+                                            position: relative;
+                                            font-size: 14px;
+                                        }
+
+                                            .apexcharts-legend-text *, .apexcharts-legend-marker * {
+                                                pointer-events: none;
+                                            }
+
+                                        .apexcharts-legend-marker {
+                                            position: relative;
+                                            display: inline-block;
+                                            cursor: pointer;
+                                            margin-right: 3px;
+                                            border-style: solid;
+                                        }
+
+                                        .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series, .apexcharts-legend.apexcharts-align-left .apexcharts-legend-series {
+                                            display: inline-block;
+                                        }
+
+                                        .apexcharts-legend-series.apexcharts-no-click {
+                                            cursor: auto;
+                                        }
+
+                                        .apexcharts-legend .apexcharts-hidden-zero-series, .apexcharts-legend .apexcharts-hidden-null-series {
+                                            display: none !important;
+                                        }
+
+                                        .apexcharts-inactive-legend {
+                                            opacity: 0.45;
+                                        }</style>
+                                </foreignObject>
+                                <g id="SvgjsG2541" class="apexcharts-inner apexcharts-graphical" transform="translate(12, -20)"><defs id="SvgjsDefs2540"><clipPath id="gridRectMask3an73xef">
+
+                                    <rect id="SvgjsRect2543" width="322" height="230" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                        </rect></clipPath><clipPath id="forecastMask3an73xef"></clipPath><clipPath id="nonForecastMask3an73xef"></clipPath><clipPath id="gridRectMarkerMask3an73xef">
+                                            <rect id="SvgjsRect2544" width="320" height="232" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                                </rect></clipPath></defs><g id="SvgjsG2545" class="apexcharts-radialbar"><g id="SvgjsG2546"><g id="SvgjsG2547" class="apexcharts-tracks"><g id="SvgjsG2548" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798"></path></g><g id="SvgjsG2550" class="apexcharts-radialbar-track apexcharts-track" rel="2"><path id="apexcharts-radialbarTrack-1" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846"></path></g><g id="SvgjsG2552" class="apexcharts-radialbar-track apexcharts-track" rel="3"><path id="apexcharts-radialbarTrack-2" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757"></path></g></g><g id="SvgjsG2554"><g id="SvgjsG2559" class="apexcharts-series apexcharts-radial-series" seriesName="Target" rel="1" data:realIndex="0"><path id="SvgjsPath2560" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001" fill="none" fill-opacity="0.85" stroke="rgba(90,141,238,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="270" data:value="75" index="0" j="0" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001"></path></g><g id="SvgjsG2561" class="apexcharts-series apexcharts-radial-series" seriesName="Mart" rel="2" data:realIndex="1"><path id="SvgjsPath2562" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683" fill="none" fill-opacity="0.85" stroke="rgba(255,91,92,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-1" data:angle="288" data:value="80" index="0" j="1" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683"></path></g><g id="SvgjsG2563" class="apexcharts-series apexcharts-radial-series" seriesName="Ebay" rel="3" data:realIndex="2"><path id="SvgjsPath2564" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554" fill="none" fill-opacity="0.85" stroke="rgba(253,172,65,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-2" data:angle="306" data:value="85" index="0" j="2" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554"></path></g><circle id="SvgjsCircle2555" r="52.41579573170733" cx="158" cy="114" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG2556" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText2557" font-family="IBM Plex Sans" x="158" y="139" text-anchor="middle" dominant-baseline="auto" font-size="15px" font-weight="400" fill="#69809a" class="apexcharts-text apexcharts-datalabel-label" style="font-family: &quot;IBM Plex Sans&quot;">Total Visits</text>
+                                    <text id="SvgjsText2558" font-family="Rubik" x="158" y="115" text-anchor="middle" dominant-baseline="auto" font-size="2rem" font-weight="500" fill="#516377" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Rubik;">80%</text></g></g></g></g><line id="SvgjsLine2565" x1="0" y1="0" x2="316" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine2566" x1="0" y1="0" x2="316" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g>
+                                <g id="SvgjsG2542" class="apexcharts-annotations"></g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resize-triggers"><div class="expand-trigger">
+                        <div style="width: 383px; height: 251px;"></div></div><div class="contract-trigger"></div></div>
+                </div>
+            </div>
+        </div>*@
+      @* <div class="col-xxl-3 col-md-6 col-lg-3 col-xl-3 mb-4">
+
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">إجمالي التراخيص المنتهي لسنة 2023</h5>
+                    <div class="dropdown">
+                        <button class="btn p-0" type="button" id="visitsOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="visitsOptions">
+                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" style="position: relative;">
+                    <div id="visitsRadialChart" style="min-height: 227.5px;">
+                        <div id="apexcharts3an73xef" class="apexcharts-canvas
+apexcharts3an73xef apexcharts-theme-light"
+                             style="width: 338px; height: 227.5px;">
+                            <svg id="SvgjsSvg2539"
+                                 width="338"
+                                 height="227.5000011444092"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xmlns:svgjs="http://svgjs.dev"
+                                 class="apexcharts-svg"
+                                 xmlns:data="ApexChartsNS"
+                                 transform="translate(0, 0)"
+                                 style="background: transparent;">
+                                <foreignObject x="0" y="0" width="338" height="227.5000011444092">
+                                    <div class="apexcharts-legend apexcharts-align-center apx-legend-position-bottom"
+                                         xmlns="http://www.w3.org/1999/xhtml" style="inset: auto 0px 1px; position: absolute; max-height: 135px;">
+                                        <div class="apexcharts-legend-series" rel="1"
+                                             seriesname="Target"
+                                             data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="1" data:collapsed="false" style="background: rgb(90, 141, 238) !important; color: rgb(90, 141, 238); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="1" i="0" data:default-text="Target" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Target</span>
+                                        </div><div class="apexcharts-legend-series" rel="2" seriesname="Mart" data:collapsed="false" style="margin: 2px 15px;"><span class="apexcharts-legend-marker" rel="2" data:collapsed="false" style="background: rgb(255, 91, 92) !important; color: rgb(255, 91, 92); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="2" i="1" data:default-text="Mart" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">Mart</span></div><div class="apexcharts-legend-series" rel="3" seriesname="Ebay" data:collapsed="false" style="margin: 2px 15px;">
+                                            <span class="apexcharts-legend-marker" rel="3" data:collapsed="false" style="background: rgb(253, 172, 65) !important; color: rgb(253, 172, 65); height: 10px; width: 10px; left: -3px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 12px;"></span><span class="apexcharts-legend-text" rel="3" i="2" data:default-text="Ebay" data:collapsed="false" style="color: rgb(168, 177, 187); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;">
+                                                Ebay
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <style type="text/css">
+
+                                        .apexcharts-legend {
+                                            display: flex;
+                                            overflow: auto;
+                                            padding: 0 10px;
+                                        }
+
+                                            .apexcharts-legend.apx-legend-position-bottom, .apexcharts-legend.apx-legend-position-top {
+                                                flex-wrap: wrap
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                flex-direction: column;
+                                                bottom: 0;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+                                                justify-content: flex-start;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+                                                justify-content: center;
+                                            }
+
+                                            .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right, .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+                                                justify-content: flex-end;
+                                            }
+
+                                        .apexcharts-legend-series {
+                                            cursor: pointer;
+                                            line-height: normal;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom .apexcharts-legend-series, .apexcharts-legend.apx-legend-position-top .apexcharts-legend-series {
+                                            display: flex;
+                                            align-items: center;
+                                        }
+
+                                        .apexcharts-legend-text {
+                                            position: relative;
+                                            font-size: 14px;
+                                        }
+
+                                            .apexcharts-legend-text *, .apexcharts-legend-marker * {
+                                                pointer-events: none;
+                                            }
+
+                                        .apexcharts-legend-marker {
+                                            position: relative;
+                                            display: inline-block;
+                                            cursor: pointer;
+                                            margin-right: 3px;
+                                            border-style: solid;
+                                        }
+
+                                        .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series, .apexcharts-legend.apexcharts-align-left .apexcharts-legend-series {
+                                            display: inline-block;
+                                        }
+
+                                        .apexcharts-legend-series.apexcharts-no-click {
+                                            cursor: auto;
+                                        }
+
+                                        .apexcharts-legend .apexcharts-hidden-zero-series, .apexcharts-legend .apexcharts-hidden-null-series {
+                                            display: none !important;
+                                        }
+
+                                        .apexcharts-inactive-legend {
+                                            opacity: 0.45;
+                                        }</style>
+                                </foreignObject>
+                                <g id="SvgjsG2541" class="apexcharts-inner apexcharts-graphical" transform="translate(12, -20)"><defs id="SvgjsDefs2540"><clipPath id="gridRectMask3an73xef">
+
+                                    <rect id="SvgjsRect2543" width="322" height="230" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                        </rect></clipPath><clipPath id="forecastMask3an73xef"></clipPath><clipPath id="nonForecastMask3an73xef"></clipPath><clipPath id="gridRectMarkerMask3an73xef">
+                                            <rect id="SvgjsRect2544" width="320" height="232" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                                </rect></clipPath></defs><g id="SvgjsG2545" class="apexcharts-radialbar"><g id="SvgjsG2546"><g id="SvgjsG2547" class="apexcharts-tracks"><g id="SvgjsG2548" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 157.98455069673406 25.48201354332798"></path></g><g id="SvgjsG2550" class="apexcharts-radialbar-track apexcharts-track" rel="2"><path id="apexcharts-radialbarTrack-1" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 157.98707578374334 39.949696249801846"></path></g><g id="SvgjsG2552" class="apexcharts-radialbar-track apexcharts-track" rel="3"><path id="apexcharts-radialbarTrack-2" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757" fill="none" fill-opacity="1" stroke="rgba(255,255,255,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.333652439024394" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 157.98960087075258 54.4173789562757"></path></g></g><g id="SvgjsG2554"><g id="SvgjsG2559" class="apexcharts-series apexcharts-radial-series" seriesName="Target" rel="1" data:realIndex="0"><path id="SvgjsPath2560" d="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001" fill="none" fill-opacity="0.85" stroke="rgba(90,141,238,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="270" data:value="75" index="0" j="0" data:pathOrig="M 158 25.48201219512194 A 88.51798780487806 88.51798780487806 0 1 1 69.48201219512194 114.00000000000001"></path></g><g id="SvgjsG2561" class="apexcharts-series apexcharts-radial-series" seriesName="Mart" rel="2" data:realIndex="1"><path id="SvgjsPath2562" d="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683" fill="none" fill-opacity="0.85" stroke="rgba(255,91,92,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-1" data:angle="288" data:value="80" index="0" j="1" data:pathOrig="M 158 39.94969512195121 A 74.05030487804879 74.05030487804879 0 1 1 87.57397501208891 91.11719735403683"></path></g><g id="SvgjsG2563" class="apexcharts-series apexcharts-radial-series" seriesName="Ebay" rel="3" data:realIndex="2"><path id="SvgjsPath2564" d="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554" fill="none" fill-opacity="0.85" stroke="rgba(253,172,65,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="4.467682926829271" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-2" data:angle="306" data:value="85" index="0" j="2" data:pathOrig="M 158 54.41737804878048 A 59.58262195121952 59.58262195121952 0 1 1 109.7966462720456 78.9782135241554"></path></g><circle id="SvgjsCircle2555" r="52.41579573170733" cx="158" cy="114" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG2556" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText2557" font-family="IBM Plex Sans" x="158" y="139" text-anchor="middle" dominant-baseline="auto" font-size="15px" font-weight="400" fill="#69809a" class="apexcharts-text apexcharts-datalabel-label" style="font-family: &quot;IBM Plex Sans&quot;">Total Visits</text>
+                                    <text id="SvgjsText2558" font-family="Rubik" x="158" y="115" text-anchor="middle" dominant-baseline="auto" font-size="2rem" font-weight="500" fill="#516377" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Rubik;">80%</text></g></g></g></g><line id="SvgjsLine2565" x1="0" y1="0" x2="316" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine2566" x1="0" y1="0" x2="316" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g>
+                                <g id="SvgjsG2542" class="apexcharts-annotations"></g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="resize-triggers"><div class="expand-trigger">
+                        <div style="width: 383px; height: 251px;"></div></div><div class="contract-trigger"></div></div>
+                </div>
+            </div>
+        </div>*@
+      <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial bg-label-danger rounded-circle"><i class="bx bx-message-square-detail fs-3"></i></span>
+                    </div>
+                    <span class="d-block text-nowrap mb-1">إجمالي المخالفات</span>
+                    <h2 class="mb-0">29</h2>
+                </div>
+            </div>
+        </div>
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-4">
+
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial bg-label-primary rounded-circle"><i class="bx bx-cube fs-3"></i></span>
+                    </div>
+                    <span class="d-block text-nowrap mb-1">إجمالي عدد المخازن</span>
+                    <h2 class="mb-0">72</h2>
+                </div>
+            </div>
+        </div>
+      <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial bg-label-warning rounded-circle"><i b-kcj6918upk="" class="menu-icon tf-icons bx bx-food-menu"></i></i></span>
+                    </div>
+
+                    <span class="d-block text-nowrap mb-1">إجمالي الفواتير </span>
+                    <h2 class="mb-0">29</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial bg-label-success rounded-circle"><i b-kcj6918upk="" class="menu-icon tf-icons bx bx-spreadsheet"></i></span>
+                    </div>
+                    <span class="d-block text-nowrap mb-1">   إجمالي حصرالمخزون</span>
+                    <h2 class="mb-0">65</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial bg-label-danger rounded-circle"><i class="menu-icon tf-icons bx bx-task"></i></span>
+                    </div>
+
+                    <span class="d-block text-nowrap mb-1">إجمالي التقارير</span>
+                    <h2 class="mb-0">40</h2>
+                </div>
+            </div>
+        </div>
+           <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial bg-label-success rounded-circle"><i class="menu-icon tf-icons bx bx-collection"></i></span>
+                    </div>
+                    <span class="d-block text-nowrap mb-1">إجمالي المكاتب </span>
+                    <h2 class="mb-0">65</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    
+                <!-- All Users -->
+                 <div class="col-12 col-lg-12 order-0 mb-4 mb-lg-0">
+                  <div class="card ">
+                    <div class="card-header">
+                      <h5 class="card-title mb-2">كل المستخدمين</h5>
+                      <h1 class="display-6 fw-normal mb-0">8,634,820</h1>
+                    </div>
+                    <div class="card-body">
+                      <span class="d-block mb-2">النشاط الحالي</span>
+                      <div class="progress progress-stacked mb-3 mb-xl-5" style="height: 8px">
+                        <div
+                          class="progress-bar bg-success"
+                          role="progressbar"
+                          style="width: 30%"
+                          aria-valuenow="30"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                        <div
+                          class="progress-bar bg-danger"
+                          role="progressbar"
+                          style="width: 15%"
+                          aria-valuenow="15"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                        <div
+                          class="progress-bar bg-info"
+                          role="progressbar"
+                          style="width: 10%"
+                          aria-valuenow="10"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                        <div
+                          class="progress-bar bg-primary"
+                          role="progressbar"
+                          style="width: 40%"
+                          aria-valuenow="40"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                        <div
+                          class="progress-bar bg-warning"
+                          role="progressbar"
+                          style="width: 15%"
+                          aria-valuenow="15"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <ul class="p-0 m-0">
+                        <li class="d-flex justify-content-between mb-3">
+                          <div class="lh-1 d-flex align-items-center me-3">
+                         صنعاء   <span class="badge badge-dot bg-success me-2"></span> 
+                          </div>
+                          <div class="gap-3 d-flex">
+                            <span>29.5k</span>
+                            <span class="fw-semibold">56%</span>
+                          </div>
+                        </li>
+                        <li class="d-flex justify-content-between mb-3">
+                          <div class="lh-1 d-flex align-items-center me-3">
+                         إب   <span class="badge badge-dot bg-danger me-2"></span> 
+                          </div>
+                          <div class="gap-3 d-flex">
+                            <span>25.7k</span>
+                            <span class="fw-semibold">26%</span>
+                          </div>
+                        </li>
+                        <li class="d-flex justify-content-between mb-3">
+                          <div class="lh-1 d-flex align-items-center me-3">
+                         عدن   <span class="badge badge-dot bg-info me-2"></span> 
+                          </div>
+                          <div class="gap-3 d-flex">
+                            <span>11.5k</span>
+                            <span class="fw-semibold">34%</span>
+                          </div>
+                        </li> 
+                        <li class="d-flex justify-content-between mb-3">
+                          <div class="lh-1 d-flex align-items-center me-3">
+                         الحديدة   <span class="badge badge-dot bg-info me-2"></span> 
+                          </div>
+                          <div class="gap-3 d-flex">
+                            <span>11.5k</span>
+                            <span class="fw-semibold">34%</span>
+                          </div>
+                        </li>
+                        <li class="d-flex justify-content-between mb-3">
+                          <div class="lh-1 d-flex align-items-center me-3">
+                           تعز <span class="badge badge-dot bg-primary me-2"></span> 
+                          </div>
+                          <div class="gap-3 d-flex">
+                            <span>48.5k</span>
+                            <span class="fw-semibold">45%</span>
+                          </div>
+                        </li>
+                        <li class="d-flex justify-content-between mb-1">
+                          <div class="lh-1 d-flex align-items-center me-3">
+                          صعدة <span class="badge badge-dot bg-warning me-2"></span> 
+                          </div>
+                          <div class="gap-3 d-flex">
+                            <span>22.1k</span>
+                            <span class="fw-semibold">7%</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ All Users -->
+
+    </div>
+    <!-- Sales -->
+    <!--/ Sales -->
+    <!-- Finance Summary -->
+
+
+

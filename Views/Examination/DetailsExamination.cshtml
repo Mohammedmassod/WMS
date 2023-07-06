@@ -1,0 +1,113 @@
+﻿<div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">الصفحة الرئيسية / </span> عرض فحص الثلاجات
+ </h4>
+
+              <!-- عرض التراخيص -->
+              
+              <!-- DataTable with Buttons -->
+      <div class="card">
+  <div class="card-datatable table-responsive pt-0">
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+      <div class="card-header flex-column flex-md-row">
+        <div class="head-label text-center">
+          <h5 class="card-title mb-0">عرض الفحص والمعاينة</h5>
+        </div>
+        <div class="dt-action-buttons text-end pt-3 pt-md-0">
+        </div>
+        <a asp-action="Index">
+          <button class="dt-button create-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button">
+            <span class="d-none d-sm-inline-block">رجوع</span>
+          </button>
+        </a>
+      </div>
+
+      <!-- Scrollable -->
+      <div class="card-datatable text-nowrap">
+        <table class="dt-scrollableTable table table-bordered">
+          <thead>
+            <tr role="row" class="table">
+              <th rowspan="2" class="sorting sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 102.2px;">موقع المخزن من الأماكن الرطبة</th>
+            </tr>
+            <tr>
+           <td class="align-items-lg-start"></td> 
+           <td class="align-items-lg-start"></td>
+              <td>
+                     <div>
+                          <a asp-action="WetPlaces">
+                                        <button type="submit" class="btn btn-primary btn-next">
+                                           <i class="bx bx-detail me-1"></i>
+                      <span class="d-none d-sm-inline-block">عرض تفاصيل</span>
+                                        </button>
+                                           </a>
+                                     
+                                    </div>
+              
+              </td>
+            </tr>
+
+            <tr>
+              <th>موقع المخزن من الأماكن الملوثة</th>
+              <td>نتائج الفحص</td>
+            </tr>
+
+            <tr>
+              <th>موقع المخزن من الطرق</th>
+              <th>نتائج الفحص</th>
+            </tr>
+
+            <tr>
+              <th>المنصات التي توضع جميع السلع المخزنة</th>
+              <td>نتائج الفحص</td>
+            </tr>
+
+            <tr>
+              <th>خلو المخزن من الحشرات والقوارض واثارها</th>
+              <td>نتائج الفحص</td>
+            </tr>
+
+            <tr>
+              <th>المواد الكيمائية والمنظفات ومبيدات الحشرات بجوار المواد الغذائية</th>
+              <td>نتائج الفحص</td>
+            </tr>
+
+            <tr>
+              <th>معدات التهوية الصناعية وكفاءتها</th>
+              <td>نتائج الفحص</td>
+            </tr>
+
+            <tr>
+              <th>الشروط الصحية في المخزن والعاملين</th>
+              <td>نتائج الفحص</td>
+            </tr>
+
+            <tr>
+              <th>فحص ومعاينة الثلاجات</th>
+               <td class="align-items-lg-start"></td> 
+           <td class="align-items-lg-start"></td>
+              <td>
+                <div class="col-4">
+                  <a asp-action="Refrigerators">
+                    <button class="btn btn-primary btn-prev">
+                      <i class="bx bx-detail me-1"></i>
+                      <span class="d-none d-sm-inline-block">عرض تفاصيل</span>
+                    </button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+      </div>
+               
+
+
+
+
+
+

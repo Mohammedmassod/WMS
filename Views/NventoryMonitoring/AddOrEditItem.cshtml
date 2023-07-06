@@ -1,0 +1,233 @@
+﻿
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">إضافة صنف  /</span> حصر المخزون السلعي</h4>
+                          <!-- Property Listing Wizard -->
+        <div id="wizard-validation" class="bs-stepper mt-5">
+            <div class="bs-stepper-header justify-content-between">
+
+                <div class="bs-stepper-header">
+
+                    <div class="line"></div>
+                    <div class="step" data-target="#addItems">
+                        <button type="button" class="step-trigger">
+                            @if (Model == null)
+                            {
+                                <span class="bs-stepper-circle">*</span>
+                                <span class="bs-stepper-label">إضافة أصناف </span>
+                            }
+                            else
+                            {
+                                <span class="bs-stepper-circle">*</span>
+                                <span class="bs-stepper-label">تعديل بيانات الصنف </span>
+                            }
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="bs-stepper-content  form-repeater">
+                  
+                <form asp-action="@ViewBag.Title" id="wizard-validation-form" onSubmit="return false">
+                    <!-- إضافة أصناف -->
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div id="addItems" class="content">
+                         <div data-repeater-list="group-a">
+                                 <div data-repeater-item>
+                        <div class="row g-3">
+                            
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="itemNumber"> رقم الصنف </label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="number" id="itemNumber" name="itemNumber" class="form-control" placeholder="1" readonly />
+                                    </div>
+                                </div>
+                            <div class="col-sm-4">
+                                    
+                                    <label for="itemGroupA" class="form-label">مجموعة الاصناف الرئيسية</label>
+                                        <div class="input-group">
+                                    <select id="itemGroupA"
+                                            name="itemGroupA"
+                                            class=" form-select form-select-lg"
+                                            data-allow-clear="true">
+                                    </select>
+                                </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="itemGroupB" class="form-label">مجموعة الاصناف الفرعية أ</label>
+                                             <div class="input-group">
+                                    <select id="itemGroupB"
+                                            name="itemGroupB"
+                                            class=" form-select form-select-lg"
+                                            data-allow-clear="true">
+                                    </select>
+                                </div> 
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="itemGroupC" class="form-label">مجموعة الاصناف الفرعية ب</label>
+                                    <div class="input-group">
+                                    <select id="itemGroupC"
+                                            name="itemGroupC"
+                                            class=" form-select form-select-lg"
+                                            data-allow-clear="true">
+                                    </select>
+                                  </div>
+                                </div>
+
+
+                                <div class="col-sm-4">
+                                        <label class="form-label" for="itmeName"> اسم الصنف </label>
+                                        <select id="itmeName"
+                                                name="itmeName"
+                                                class=" form-select "
+                                                placeholder="اسم الصنف"
+                                                aria-label="اسم الصنف">
+                                        </select>
+                                    </div>
+                            
+                      
+                                
+               
+                               <div class="col-sm-4">
+                                    <label class="form-label" for="Barcode">كود الصنف </label>
+                                    <input type="number"
+                                           id="Barcode"
+                                           name="Barcode"
+                                           class="form-control"
+                                           placeholder="" />
+
+                                </div>
+
+                        
+                                      <div class="col-sm-4">
+                                <label  class="form-label">الكمية الموجودة</label>
+                                <input class="form-control"
+                                type="number"
+                                       id="quantity"
+                                      name="quantity"
+                                       aria-label="jdoe1" />
+                                <small></small>
+                                <span class="text-danger"></span>
+                            </div>
+
+
+
+                                <div class="col-sm-4">
+                                    <label class="form-label" for="ProductionDate1">تاريخ أنتاج الصنف</label>
+                                    <div class="input-group input-group-merge has-validation">
+                                        <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                                        <input type="date"
+                                               class="form-control dt-date flatpickr-input"
+                                               id="ProductionDate1"
+                                               name="ProductionDate1"
+                                               aria-describedby="basicDate2"
+                                               placeholder="MM/DD/YYYY"
+                                               aria-label="MM/DD/YYYY">
+                                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                </div>
+
+                               
+
+                                <div class="col-sm-4 fv-plugins-icon-container">
+
+                                    <label class="form-label" for="EndDate2">تاريخ انتهاء الصنف</label>
+                                    <div class="input-group input-group-merge has-validation">
+                                        <span id="basicDate2" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                                        <input type="date"
+                                               class="form-control dt-date flatpickr-input"
+                                               id="EndDate2" name="EndDate2"
+                                               aria-describedby="basicDate2"
+                                               placeholder="يوم/شهر/سنة"
+                                               aria-label="يوم/شهر/سنة" />                  
+                                    </div><div class="fv-plugins-message-container invalid-feedback"></div>
+                                </div>
+                                  <div class="col-sm-4">
+                                <label id="sUnit"  class="form-label">الوحدة الثانوية</label>
+                                @if (Model == null)
+                                {
+                                    <select id="secondaryUnit"  asp-items="ViewBag.ItemUoMs" class="select2 form-select form-select-lg">
+                                        <option value=""></option>
+                                    </select>
+                                }
+                                else
+                                {
+                                    <input type="text" value="@ViewBag.ItemUoMs" class="form-control" readonly aria-label="jdoe1" />
+                                    <input id="secondaryUnit"  class="form-control" hidden readonly aria-label="jdoe1" />
+                                }
+                                <small></small>
+                                <span  class="text-danger"></span>
+                            </div>
+                                <div class="col-sm-4">
+                            <label class="form-label" for="full">التعبئة</label>
+                            <input type="number" id="full" name="full" class="form-control dt-email" placeholder=""
+                                   aria-label="number" />
+
+
+                        </div>
+                           <div class="col-sm-4 fv-plugins-icon-container">
+                 <label class="form-label">   ملاحظات</label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text">
+                  
+                    </span>
+                    <input type="text" id="basicFullname" class="form-control dt-full-name" name="basicFullname" placeholder="  ملاحظات   " aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+                    <div class="d-flex col-12 justify-content">
+                                  <button class="btn btn-label-danger mt-4" data-repeater-delete>
+                                         
+                                            <span class="align-middle">حذف</span>
+                                               <i class="bx bx-trash"></i>
+                                        </button>
+                                  
+                                           
+                                   
+                                    </div>
+
+                            @if (Model != null)
+                            {
+                                <input type="hidden" name="iPage" value="@ViewBag.p1" />
+                            }
+                            <input type="hidden" name="page" value="@ViewBag.p" />
+                            <input type="hidden" name="size" value="@ViewBag.s" />
+                            <input type="hidden" name="pageSize" value="@ViewBag.s1" />
+                          
+                            <div class="col-sm-6">
+                            </div>
+                          
+                        </div>
+                    </div>       </div>
+                    </div>
+                      <div class="d-flex col-12 justify-content-between">
+                                @if (Model == null)
+                                {<input type="hidden" name="send" id="send" />
+                                   <button class="btn btn-primary" data-repeater-create>
+                                                <i class="bx bx-plus"></i>
+                                          <span class="align-middle"> إضافة صنف جديد</span>
+                                            </button>}
+                                else
+                                {<a></a>}
+
+                                <div>
+                                          <a asp-action="SelectionItem" button type="submit" class="btn btn-primary " id="type-success" name="submitButton">حفظ</a> 
+                                  @*  <button type="submit" id="button1" onclick="addItems(0)" class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block">حفظ</span>
+                                    </button>*@
+                                    <a asp-action="Detail" asp-route-id="@if (Model != null) {@Model.InventoryLineId} else {@ViewBag.invId}"
+                                       asp-route-page="@ViewBag.p" asp-route-iPage="@ViewBag.p1" asp-route-pageSize="@ViewBag.s1" asp-route-size="@ViewBag.s" class="btn btn-label-secondary">إلغاء</a>
+                                </div>
+
+                            </div>
+                </form>
+            </div>
+        </div>  
+        </div>
+       
+<!-- Main JS -->
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/forms-extras.js"></script>
+<!-- Page JS -->

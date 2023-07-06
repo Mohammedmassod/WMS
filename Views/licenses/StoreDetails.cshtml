@@ -1,0 +1,647 @@
+﻿<div class="layout-container">
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">إدارة التراخيص   /</span>     عرض تفاصيل ترخيص المخزن</h4>
+
+        <!-- Default -->
+        @* <div class="row gy-4">
+            <div class="col-12">
+            <h5>Default</h5>
+            </div>*@
+        <!-- Default Icons Wizard -->
+        <div class="col-16">
+
+            <div class="bs-stepper wizard-icons wizard-icons-example mt-2">
+                <div class="bs-stepper-header">
+                    <div class="step" data-target="#account-details">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 54 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-account.svg#wizardAccount"></use>
+                                </svg>
+                            </span>
+                            <span class="bs-stepper-label">بيانات طالب الترخيص</span>
+                        </button>
+                    </div>
+                    <div class="line">
+                        <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="step" data-target="#personal-info">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 58 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-personal.svg#wizardPersonal"></use>
+                                </svg>
+                            </span>
+
+                            <span class="bs-stepper-label"> بيانات المخزن</span>
+                        </button>
+                    </div>
+                    <div class="line">
+                        <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="step" data-target="#address">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 54 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-address.svg#wizardAddress"></use>
+                                </svg>
+                            </span>
+                            <span class="bs-stepper-label">بيانات فتح المخزن</span>
+                        </button>
+                    </div>
+                    <div class="line">
+                        <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="step" data-target="#social-links">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 54 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-social-link.svg#wizardSocialLink"></use>
+                                </svg>
+                            </span>
+                            <span class="bs-stepper-label">نوع السلعة المخزنة  </span>
+                        </button>
+                    </div>
+                    <div class="step" data-target="#Commercial_record">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 54 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-personal.svg#wizardPersonal"></use>
+                                </svg>
+                            </span>
+                            <span class="bs-stepper-label">  بيانات السجل التجاري  </span>
+                        </button>
+                    </div>
+                    <div class="step" data-target="#Tax_Number">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 54 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-account.svg#wizardAccount"></use>
+                                </svg>
+                            </span>
+                            <span class="bs-stepper-label">  بيانات الرقم الضريبي  </span>
+                        </button>
+                    </div>
+                    <div class="step" data-target="#Attached_Document">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 54 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-address.svg#wizardAddress"></use>
+                                </svg>
+                            </span>
+                            <span class="bs-stepper-label">      الوثائق المرفقة  </span>
+                        </button>
+                    </div>
+                    <div class="line">
+                        <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="step" data-target="#review-submit">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-icon">
+                                <svg viewBox="0 0 54 54">
+                                    <use xlink:href="../../assets/svg/icons/form-wizard-submit.svg#wizardSubmit"></use>
+                                </svg>
+                            </span>
+                            <span class="bs-stepper-label"> مراجعة  & اسال</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="bs-stepper-content">
+                    <form onSubmit="return false">
+                        <!-- Account Details -->
+                        <div id="account-details" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات طالب الترخيص</h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم الترخيص</th>
+                                                <th>اسم طالب الترخيص</th>
+                                                <th>اللقب</th>
+                                                <th>نوع البطاقة</th>
+                                                <th>رقم البطاقة</th>
+                                                <th>  تاريخ الاصدار</th>
+                                                <th>  مكان صدورها</th>
+                                                <th>   الجنسية</th>
+                                                <th>رقم الجوال</th>
+                                                <th>رقم الهاتف</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev" disabled>
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Personal Info -->
+                        <div id="personal-info" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات المخزن</h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم المخزن</th>
+                                                <th>عنوان المحافظة </th>
+                                                <th>المديرية</th>
+                                                <th> امام</th>
+                                                <th> شارع</th>
+                                                <th>  جوار </th>
+                                                <th>  نوع المخزن</th>
+                                                <th>   وضع المخزن</th>
+                                                <th>فئة المخزن</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="content-header mb-3">
+                                    <h4 class="mb-0">بيانات مالك المخزن</h4>
+
+                                </div>
+                                <div class="card-datatable text-nowrap">
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم المالك</th>
+                                                <th>اسم المالك  </th>
+                                                <th>اسم العائلة</th>
+
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-primary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Address -->
+                        <div id="address" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات فتح المخزن</h4>
+
+                            </div>
+                            <div class="row g-3">
+
+                                <div class="card-datatable text-nowrap">
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>اسم المخزن</th>
+                                                <th>  نوع بناء المخزن  </th>
+                                                <th>طول المخزن </th>
+                                                <th> عرض المخزن</th>
+                                                <th> ارتفاع المخزن</th>
+                                                <th>  عدد الفتحات </th>
+                                                <th>  السعة التقديرية للمخزن</th>
+                                                          <th>ظروف التخزين</th>
+                                                <th>   تاريخ طالب المخزن</th>
+                                                <th>الحالة</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-primary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Social Links -->
+                        <div id="social-links" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">نوع السلعة المخزنة </h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم السلعة</th>
+                                                <th>مجموعة  الرئيسية</th>
+                                                <th>مجموعة  الفرعية أ</th>
+                                                <th>مجموعة  الفرعية ب</th>
+                                                <th>اسم السلعة</th>
+                                                <th>كود الصنف  </th>
+                                                <th>اسم الماركة</th>  
+                                                <th>نوع الصنف</th>
+                                                <th>بلد المنشأ</th>
+                                                <th>حجم السلعة  </th>
+                                                <th>وحدة القياس</th>
+                                                <th>وزن السلعة   </th>
+                                                <th>وحدة القياس</th>
+                                                <th>تاريخ أنتاج الصنف</th>
+                                                <th>تاريخ انتهاء الصنف</th>
+                                                <th>الحالة</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-primary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- بيانات السجل التجاري  -->
+                        <div id="Commercial_record" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">    بيانات السجل التجاري </h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>  #</th>
+                                                <th>  الاسم</th>
+                                                <th>  رقم السجل التجاري </th>
+                                                <th>  الفئة</th>
+                                                <th>  مكان النشاط</th>
+                                                <th>تاريخ الاصدار</th>
+                                                <th>  الاسم التجاري </th>
+
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-primary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- بيانات الرقم الضريبي   -->
+                        <div id="Tax_Number" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">    بيانات الرقم الضريبي </h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>  #   </th>
+                                                <th>  الرقم الضريبي </th>
+                                                <th>   تاريخ اخر تجديد </th>
+                                                <th>  جهة الإصدار</th>
+
+
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-primary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/  الوثائق المرفقة -->
+                        <div id="Attached_Document" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">  الوثائق المرفقة </h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>  #   </th>
+                                                <th>  نوع الوثيقة  </th>
+                                                <th>   صورة الوثيقة   </th>
+
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-primary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review -->
+                        <div id="review-submit" class="content">
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات طالب الترخيص</h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم الترخيص</th>
+                                                <th>اسم طالب الترخيص</th>
+                                                <th>اللقب</th>
+                                                <th>نوع البطاقة</th>
+                                                <th>رقم البطاقة</th>
+                                                <th>  تاريخ الاصدار</th>
+                                                <th>  مكان صدورها</th>
+                                                <th>   الجنسية</th>
+                                                <th>رقم الجوال</th>
+                                                <th>رقم الهاتف</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات المخزن</h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم المخزن</th>
+                                                <th>عنوان المحافظة </th>
+                                                <th>المديرية</th>
+                                                <th> امام</th>
+                                                <th> شارع</th>
+                                                <th>  جوار </th>
+                                                <th>  نوع المخزن</th>
+                                                <th>   وضع المخزن</th>
+                                                <th>الحالة</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="content-header mb-3">
+                                    <h4 class="mb-0">بيانات مالك المخزن</h4>
+
+                                </div>
+                                <div class="card-datatable text-nowrap">
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم المالك</th>
+                                                <th>اسم المالك  </th>
+                                                <th>اسم العائلة</th>
+
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">بيانات فتح المخزن</h4>
+
+                            </div>
+
+
+                            <div class="card-datatable text-nowrap">
+                                <table class="dt-scrollableTable table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>اسم المخزن</th>
+                                            <th>  نوع بناء المخزن  </th>
+                                            <th>طول المخزن </th>
+                                            <th> عرض المخزن</th>
+                                            <th> ارتفاع المخزن</th>
+                                            <th>  عدد الفتحات </th>
+                                            <th>  السعة التقديرية للمخزن</th>
+                                            <th>   تاريخ طالب المخزن</th>
+                                            <th>الحالة</th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <hr />
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">نوع السلعة المخزنة </h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم السلعة</th>
+                                                <th>مجموعة  الرئيسية</th>
+                                                <th>مجموعة  الفرعية أ</th>
+                                                <th>مجموعة  الفرعية ب</th>
+                                                <th>اسم السلعة</th>
+                                                <th>كود الصنف  </th>
+                                                <th>اسم الماركة</th>  
+                                                <th>نوع الصنف</th>
+                                                <th>بلد المنشأ</th>
+                                                <th>حجم السلعة  </th>
+                                                <th>وحدة القياس</th>
+                                                <th>وزن السلعة   </th>
+                                                <th>وحدة القياس</th>
+                                                <th>تاريخ أنتاج الصنف</th>
+                                                <th>تاريخ انتهاء الصنف</th>
+                                                <th>الحالة</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">    بيانات السجل التجاري </h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>  #</th>
+                                                <th>  الاسم</th>
+                                                <th>  رقم السجل التجاري </th>
+                                                <th>  الفئة</th>
+                                                <th>  مكان النشاط</th>
+                                                <th>تاريخ الاصدار</th>
+                                                <th>  الاسم التجاري </th>
+
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">    بيانات الرقم الضريبي </h4>
+
+                            </div>
+
+                            <div class="card-datatable text-nowrap">
+
+                                <table class="dt-scrollableTable table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>  #   </th>
+                                            <th>  الرقم الضريبي </th>
+                                            <th>   تاريخ اخر تجديد </th>
+                                            <th>  جهة الإصدار</th>
+
+
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <hr />
+                            <div class="content-header mb-3">
+                                <h4 class="mb-0">  الوثائق المرفقة </h4>
+
+                            </div>
+                            <div class="row g-3">
+                                <div class="card-datatable text-nowrap">
+
+                                    <table class="dt-scrollableTable table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>  #   </th>
+                                                <th>  نوع الوثيقة  </th>
+                                                <th>   صورة الوثيقة   </th>
+
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="d-flex col-12 justify-content-between">
+                                <button class="btn btn-primary btn-prev">
+                                    <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                    <span class="d-none d-sm-inline-block">السابق</span>
+                                </button>
+                                <div class="content-header mb-6">
+                                    <a class="btn btn-label-secondary d-grid w-100 mb-3"
+                                       target="_blank"
+                                       asp-action="PrintStoreDetails">
+                                        طباعة
+                                    </a>
+
+                                </div>
+
+                                <button class="btn btn-success btn-submit">ارسال</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /Default Icons Wizard -->
+
+    </div>
+    <div class="content-backdrop fade"></div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+</div>
+<!-- / Layout wrapper -->
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../../assets/vendor/libs/popper/popper.js"></script>
+<script src="../../assets/vendor/js/bootstrap.js"></script>
+<script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+<script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+<script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+<script src="../../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<script src="../../assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+<script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+<script src="../../assets/vendor/libs/select2/select2.js"></script>
+
+<!-- Main JS -->
+<script src="../../assets/js/main.js"></script>
+
+<!-- Page JS -->
+
+<script src="../../assets/js/form-wizard-icons.js"></script>
+
+

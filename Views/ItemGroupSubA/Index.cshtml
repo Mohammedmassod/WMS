@@ -1,0 +1,171 @@
+﻿@model IEnumerable<WMS.Models.ItemGroup>
+
+@{
+
+    int rowCounter = 0;
+
+    ViewData["Title"] = "مجموعة الاصناف الفرعية أ";
+}
+
+
+@*واجهة عرض مجموعة الاصناف الفرعية أ*@
+
+
+<div class="card mb-4 mt-5">
+
+
+
+    <div class="card-body">
+        <div class="row gx-3 gy-2 align-items-center">
+
+            <div class="col-md-2">
+                <label class="form-label" for="search-for">بحث بحسب </label>
+                <select id="searchsele" class="form-select ">
+                    <option value="3">اسم المجموعة</option>
+                    <option value="1">رقم المجموعة</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label" for="search"> بحث </label>
+                <div id="DataTables_Table_0_filter" class="input-group input-group-merge dataTables_filter">
+                    <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                    <input id="seaarchinput"
+                           type="search"
+                           class="form-control"
+                           placeholder="..."
+                           aria-label=""
+                           aria-controls="DataTables_Table_0" />
+                </div>
+
+            </div>
+            <div class="col-md-4 align-self-center ">
+                <div class="text-end mb-6 me-4 mt-4">
+                    <button class="dt-button add-new btn btn-primary"
+                            tabindex="0"
+                            aria-controls="DataTables_Table_0"
+                            type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#AddItemGropA"
+                    >
+                        <span><i class="bx bx-plus me-0 me-lg-2"></i><span class="d-none d-lg-inline-block">إضافة مجموعة</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-datatable table-responsive mt-4 ">
+        <table class="datatables-users table border-top">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        رقم المجموعة
+                    </th>
+                   
+                    <th>
+                        إسم المجموعة
+                    </th>
+                    <th>
+                        إسم المجموعة الرئيسية
+
+                    </th>
+                    <th>
+                        الإجراءات
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody class="table-border-bottom-0">
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @(rowCounter += 1)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+
+                       
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GroupName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ParentGroup.GroupName)
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu" data-popper-placement="top-start">
+                                    <a class="dropdown-item" asp-route-Id="@item.ParentGroupId" asp-controller="ItemGroupSubB" asp-action="ItemGroupList"><i class="bx bx-detail me-1"></i> فتح</a>
+
+                                    <button class="dropdown-item"
+                                            onclick="ShowInAside('@Url.Action("AddOrEdit","ItemGroupSubA",new { id = item.Id },Context.Request.Scheme)','تعديل مجموعة أصناف الفرعية أ')"
+                                            data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvasAddeclient"
+                                            aria-controls="DataTables_Table_0">
+                                        <i class="bx bx-edit-alt me-1"></i>
+                                        تعديل
+                                    </button>
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+<!-- Offcanvas to add AItemGroup -->
+<div class="offcanvas offcanvas-end"
+     id="offcanvasAddeclient"
+     tabindex="-1"
+     aria-labelledby="offcanvasAddeclientLabel">
+    <div class="offcanvas-header border-bottom">
+        <h6 id="addcaselable" class="offcanvas-title"></h6>
+        <button type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body flex-grow-0 mx-0">
+    </div>
+
+
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ItemGroupSubAScriptsPartial");
+    }
+}

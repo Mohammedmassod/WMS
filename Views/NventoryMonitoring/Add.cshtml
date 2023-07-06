@@ -1,0 +1,163 @@
+﻿<div class="offcanvas offcanvas-end show" id="add-new-record" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="exampleModalLabel"> اضافة حصر    </h5>
+        <a asp-action="Index"> <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button></a>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+
+        <form asp-action="Add" class="add-new-record row g-2 pt-0 fv-plugins-bootstrap5 fv-plugins-framework" id="form-add-new-record" onsubmit="return false" novalidate="novalidate">
+
+            @*
+                <div class="col-sm-12">
+                <label class="form-label"> الرقم </label>
+                <div class="input-group input-group-merge">
+                <input type="number" id="VNumber" name="VNumber" class="form-control" placeholder="1" readonly />
+                </div>
+                </div>
+            *@
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label"> اسم التاجر</label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text">
+
+                    </span>
+                    <input type="text"
+                           id="basicFullname"
+                           class="form-control dt-full-name"
+                           name="basicFullname"
+                           placeholder="ادخل اسم التاجر   "
+                           aria-label="John Doe"
+                           aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label"> اسم المستخدم </label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text">
+
+                    </span>
+                    <input type="text" id="modalEditUserName" name="modalEditUserName" class="form-control" placeholder="اسم المستخدم">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label"> الاسم التجاري</label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text">
+
+                    </span>
+                    <input type="text" id="basicFullname"
+                           class="form-control dt-full-name"
+                           name="basicFullname" placeholder="ادخل الاسم التجاري   "
+                           aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            <div class="col-sm-6">
+
+                <label class="form-label" for="formValidationProvince">  المحافظة</label>
+                <select id="formValidationProvince" name="formValidationProvince" class="form-select">
+                    <option label=" " data-select2-id="18"></option>
+                    <option data-select2-id="71">صنعاء</option>
+                    <option data-select2-id="72">إمانة العاصمة </option>
+                    <option data-select2-id="73">إب </option>
+                    <option data-select2-id="74">تعز</option>
+                    <option data-select2-id="75">ذمار</option>
+                    <option data-select2-id="76">الحديدة</option>
+                    <option data-select2-id="77">صعدة</option>
+                    <option data-select2-id="78">عدن    </option>
+                    <option data-select2-id="80"> سيئؤن</option>
+                    <option data-select2-id="81">المكلاء </option>
+                    <option data-select2-id="82">حضرموت</option>
+                    <option data-select2-id="83">حجة  </option>
+                    <option data-select2-id="84">ريمة  </option>
+                    <option data-select2-id="85">عمران   </option>
+                    <option data-select2-id="86">    المحويت</option>
+                    <option data-select2-id="87">    لحج</option>
+                    <option data-select2-id="88">    الضالع</option>
+                    <option data-select2-id="89">    المهرة</option>
+                    <option data-select2-id="90">    البيضاء</option>
+                    <option data-select2-id="92">    الجوف</option>
+                    <option data-select2-id="93">    مارب</option>
+                    <option data-select2-id="93">    أبين</option>
+                    <option data-select2-id="93">    يافع</option>
+                </select>
+                <span class="dropdown-wrapper" aria-hidden="true"></span>
+            </div>
+
+            <div class="col-sm-6">
+                <label class="form-label" for="formValidationDirectorate">المديرية </label>
+                <select id="formValidationDirectorate"
+                        name="formValidationDirectorate"
+                        class=" form-select "
+                        data-allow-clear="true">
+                </select>
+            </div>
+            <div class="col-sm-6 fv-plugins-icon-container">
+                <label class="form-label"> امام    </label>
+                <input type="text"
+                       required
+                       class="form-control dt-full-name" />
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6 fv-plugins-icon-container">
+                <label class="form-label">شارع  </label>
+                <input type="text"
+                       required
+                       class="form-control dt-full-name" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="col-sm-6 fv-plugins-icon-container">
+                <label class="form-label">جوار    </label>
+                <input type="text"
+                       required
+                       class="form-control dt-full-name" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label class="form-label" for="formValidationTypebuilding"> نوع المخزن</label>
+                <select class="select2 form-select form-select-lg" id="formValidationTypebuilding" name="formValidationTypebuilding">
+                    <option label=" ">  </option>
+                    <option> مركزي </option>
+                    <option> خدمي </option>
+                    <option> تجاري </option>
+                </select>
+            </div>
+        
+
+
+
+            <div class="col-sm-6 fv-plugins-icon-container">
+                <label class="form-label">عدد الفتحات  </label>
+                <input type="number"
+                       required
+                       class="form-control dt-full-name" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+
+                <label class="form-label" for="StatusOpen">  حالة  المخزن </label>
+                <select id="StatusOpen" name="StatusOpen" class="form-select">
+                    <option label=""> </option>
+                    <option value="0"> نشط </option>
+                    <option value="1"> غير نشط </option>
+                </select>
+            </div>
+
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+              <a asp-action="SelectionItem" button type="submit" class="btn btn-primary " id="type-success" name="submitButton">حفظ</a> 
+
+                <button class="btn btn-label-secondary " type="reset" data-bs-dismiss="offcanvas"> إلغاء</button>
+
+
+            </div>
+
+        </form>
+    </div>
+</div>

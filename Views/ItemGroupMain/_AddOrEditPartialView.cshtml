@@ -1,0 +1,106 @@
+﻿@model WMS.Models.ItemGroup
+
+@{
+    ViewBag.Title = "Create";
+    ViewData["Active"] = "Add";
+    ViewData["Open"] = "open";
+}
+ 
+<!-- عرض التراخيص -->
+<!-- Offcanvas to add AItemGroup -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="AddItemGropM" aria-labelledby="AddItemGropM">
+    <div class="offcanvas-header border-bottom">
+        <h5 id="offcanvasAddSectorLabel" class="offcanvas-title">إضافة مجموعة </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+
+        <form asp-action="AddOrEdit"
+              class="needs-validation"
+              id="clientAddForm"
+              asp-route-id="@Model.Id">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3 mt-3">
+                <label asp-for="Id" class="form-label"> رقم المجموعة</label>
+                <input asp-for="Id"
+                       readonly
+                       class="form-control"
+                       placeholder="رقم المجموعة"
+                       aria-label="jdoe1" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+
+       
+
+            <div class="mb-3 mt-3">
+                <label asp-for="GroupName" class="form-label"> اسم المجموعة</label>
+                <input asp-for="GroupName"
+                       required
+                       type="text"
+                       class="form-control"
+                       placeholder="اسم المجموعة"
+                       aria-label="jdoe1" />
+                <span asp-validation-for="GroupName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label asp-for="Description" class="form-label"> وصف المجموعة</label>
+                <input asp-for="Description"
+                       required
+                       type="text"
+                       class="form-control"
+                       placeholder="وصف المجموعة"
+                       aria-label="jdoe1" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+             <div class="mb-3 mt-3">
+            <input asp-for="Ranking"
+            hidden
+            type="number"
+            value="1"
+            class="form-control"
+            aria-label="jdoe1" />
+            <span asp-validation-for="Ranking" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <input asp-for="ParentGroupId"
+                       hidden
+                       type="number"
+                       value=null
+                       class="select2 form-select form-select-lg"
+                       aria-label="jdoe1" />
+                <span asp-validation-for="ParentGroupId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> حالة مجموعة الاصناف </label>
+                <select asp-for="Status" id="select2Basic" required class=" form-select " placeholder="حالة الحساب" data-allow-clear="true">
+                    <option value=NULL> يرجى اختيار حالة مجموعة الاصناف </option>
+                    <option value="True"> نشط </option>
+                    <option value="False"> غير نشط </option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+                <button type="submit" class="btn btn-primary " id="type-success" name="submitButton">حفظ</button>
+                <button class="btn btn-label-secondary " type="reset" data-bs-dismiss="offcanvas"> إلغاء</button>
+            </div>
+
+        </form>
+
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ItemGroupMScriptsPartial");
+
+    }
+}

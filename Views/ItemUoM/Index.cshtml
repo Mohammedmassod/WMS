@@ -1,0 +1,226 @@
+﻿@model IEnumerable<WMS.Models.ItemUnit>
+@*@model InventorySystem.Models.ItemUoM*@
+
+@{
+    int rowCounter = 0;
+
+    ViewData["Title"] = "وحدات القياس";
+
+
+
+}
+
+
+
+<div class="card mb-4 mt-5">
+    <!-- البحث -->
+    <div class="card-body">
+        <div class="row gx-3 gy-2 align-items-center ">
+
+            <div class="col-md-2 ">
+                <label class="form-label" for="search-for">بحث بحسب </label>
+                <select class="form-select ">
+                    <option value=""> </option>
+                    <option value="تاريخ الإنشاء">الوحدة الأساسية </option>
+                    <option value="اسم التسعيرة">الوحدة الثانوية</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label" for="search"> بحث </label>
+                <div class="input-group input-group-merge">
+                    <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                    <input type="text" class="form-control" placeholder="..." aria-label=""
+                           aria-describedby="basic-addon-search31" />
+                </div>
+            </div>
+
+            <div class="col-md-4 align-self-center ">
+                <div class="text-end mb-6 me-4 mt-4">
+                    <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0"
+                            type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAddunit">
+                        <span>
+                            <i class="bx bx-plus me-0 me-lg-2"></i><span class="d-none d-lg-inline-block">
+                                إضافة وحدة
+                                قياس
+                            </span>
+                        </span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--the table -->
+    <div class="card-datatable table-responsive mt-4">
+        <table class="datatables-users table border-top">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>اسم الصنف</th>
+                    <th>وصف الصنف</th>
+                    <th>الوحدة الثانوية</th>
+                    <th>الوحدة الأساسية</th>
+                    <th>التعبئة</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @(rowCounter += 1)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Item.ItemName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Item.Description)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Unit.Name)
+                        </td>
+
+                        <td>
+                            @ViewBag.MainUoM
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <nav aria-label="Page navigation" class="mt-5 me-4">
+        <ul class="pagination pagination-sm justify-content-end ">
+            <li class="page-item prev mr">
+                <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevrons-left"></i></a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="javascript:void(0);">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">2</a>
+            </li>
+            <li class="page-item ">
+                <a class="page-link" href="javascript:void(0);">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">4</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">5</a>
+            </li>
+            <li class="page-item next">
+                <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevrons-right"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+
+</div>
+
+
+<!-- Offcanvas to add unit -->
+<div class="offcanvas offcanvas-end"
+     tabindex="-1"
+     id="offcanvasAddunit"
+     aria-labelledby="offcanvasAddunitLabel">
+    <div class="offcanvas-header border-bottom">
+        <h6 id="addcaselable" class="offcanvas-title">وحدات القياس</h6>
+        <button type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body flex-grow-0 mx-0">
+
+        <form class="add-new-user pt-0 " id="UintOfMeasurment" onsubmit="return false">
+
+            <div class="mb-3 ">
+                <label class="form-label" for="itemName">اسم الصنف</label>
+                <input type="text" id="itemName" name="itemName" class="form-control" placeholder=""
+                       aria-label="jdoe1" />
+            </div>
+
+            <div class="mb-3 ">
+                <label class="form-label" for="itemDisc">وصف الصنف</label>
+                <input type="text" id="itemDisc" name="itemDisc" class="form-control" placeholder=""
+                       aria-label="jdoe1" />
+            </div>
+            <hr />
+            <div class="form-repeater">
+                <div data-repeater-list="group-a">
+                    <div data-repeater-item>
+                        <div class="d-flex justify-content-end mt-0">
+                            <i class="bx bx-x  text-muted  " data-repeater-delete></i>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="mainUnit"> الوحدة الأساسية</label>
+                            <input type="text" id="mainUnit" name="mainUnit" class="form-control" placeholder="" aria-label="jdoe1" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="secondUnit"> الوحدة الثانوية</label>
+                            <input type="text" id="secondUnit" name="secondUnit" class="form-control" placeholder="" aria-label="jdoe1" />
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="full">التعبئة</label>
+                            <input type="number" id="full" name="full" class="form-control dt-email" placeholder=""
+                                   aria-label="number" />
+
+
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+                <div class="mb-0">
+                    <button class="btn btn-label-secondary" data-repeater-create>
+                        <i class="bx bx-plus"></i>
+                        <span class="align-middle">إضافة وحدة أخرى</span>
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+                <button class="btn btn-primary " type="submit" id="btnAdd" onclick="AddWarehouse()">حفظ</button>
+
+                <button class="btn btn-label-secondary " type="reset" data-bs-dismiss="offcanvas"> إلغاء</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ItemUoMScriptsPartial");
+    }
+    <script>
+
+
+    </script>
+}

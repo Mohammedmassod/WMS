@@ -1,0 +1,83 @@
+﻿@model WMS.Models.Sector
+
+@{
+    ViewBag.Title = "Create";
+    ViewData["Active"] = "Add";
+    ViewData["Open"] = "open";
+}
+
+<!-- عرض التراخيص -->
+<!-- Offcanvas to add AItemGroup -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="AddSector"
+     aria-labelledby="AddSector">
+    <div class="offcanvas-header border-bottom">
+        <h5 id="offcanvasAddSectorLabel" class="offcanvas-title"> إضافة قطاع    </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+
+        <form method="post" asp-controller="Sectors" asp-action="Create222" class="add-new-user pt-0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+          
+@*
+            @*  <div class="col-sm-12">
+            <label  class="form-label"> رقم القطاع</label>
+            <div class="input-group input-group-merge">
+
+            <input type="number" id="SectorId" name="SectorId" class="form-control" placeholder="1" readonly />
+            </div>
+            </div>*@
+@**@
+
+           <input type="hidden" asp-for="SectorId" /> 
+            <div class="col-sm-12 fv-plugins-icon-container">
+
+                <label asp-for="SectorName" class="form-label"> اسم القطاع </label>
+                <div class="input-group input-group-merge has-validation">
+                    <span asp-validation-for="SectorName" id="basicFullname2" class="input-group-text">
+
+                    </span>
+                    <input asp-for="SectorName"  type="text" id="basicFullname" class="form-control dt-full-name" placeholder="اسم القطاع   " aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label asp-for="Discription" class="form-label"> وصف القطاع</label>
+                <div class="input-group input-group-merge has-validation">
+                    <span asp-validation-for="Discription" id="basicFullname2" class="input-group-text">
+
+                    </span>
+                    <input asp-for="Discription"  type="text" id="basicFullname" class="form-control dt-full-name"  placeholder="وصف القطاع   " aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            @* <div class="sm-12">
+            <label class="form-label"> حالة القطاع </label>
+            <select
+            id="select2Basic"
+            required
+            class="select2 form-select form-select-lg"
+            placeholder="حالة الحساب">
+            <option value=NULL>يرجى اختيار حالة القطاع</option>
+            <option value="True"> نشط </option>
+            <option value="False"> غير نشط </option>
+            </select>
+            <span  class="text-danger"></span>
+            </div>
+            *@
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+
+                <button type="submit" class="btn btn-primary " id="position-top-end" name="submitButton">حفظ</button>
+                <button class="btn btn-label-secondary " type="reset" data-bs-dismiss="offcanvas"> إلغاء</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+

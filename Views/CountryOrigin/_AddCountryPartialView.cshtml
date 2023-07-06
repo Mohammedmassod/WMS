@@ -1,0 +1,68 @@
+﻿@model WMS.Models.OriginCountry
+
+@{
+    ViewBag.Title = "اضافة بلد ";
+    ViewData["Active"] = "Add";
+    ViewData["Open"] = "open";
+}
+
+<!-- عرض التراخيص -->
+<!-- Offcanvas to add AItemGroup -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="AddCountry" aria-labelledby="AddCountry">
+    <div class="offcanvas-header border-bottom">
+        <h5 id="offcanvasAddCountryLabel" class="offcanvas-title">إضافة بلد</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+        <form method="post" asp-action="AddOrEdit" asp-controller="CountryOrigin" class="add-new-user pt-0">
+            <input type="hidden" asp-for="CountryId" />
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label asp-for="CountryName" class="form-label">اسم بلد</label>
+                <div class="input-group input-group-merge has-validation">
+                    <span asp-validation-for="CountryName" id="basicFullname2" class="input-group-text"></span>
+                    <input asp-for="CountryName"  type="text" id="basicFullname" class="form-control dt-full-name" placeholder="اسم البلد" aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label asp-for="Description"  class="form-label">وصف البلاد</label>
+                <div class="input-group input-group-merge has-validation">
+                    <span asp-validation-for="Description" id="basicFullname2" class="input-group-text"></span>
+                    <input asp-for="Description"  type="text" id="basicFullname" class="form-control dt-full-name" placeholder="وصف البلد" aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+        @*<div class="mb-3 mt-3">
+                    <label asp-for="SectorId" class="form-label">   اسم القطاع</label>
+                    <select asp-for="SectorId"
+                    class=" form-select "
+                    placeholder="اسم القطاع"
+                    aria-label="jdoe1"
+                    asp-items="ViewBag.Sectors">
+                    <option value="1">قطاع التجارة الداخلية</option>
+            </select>
+        </div>*@
+    
+         
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+                <button type="submit" class="btn btn-primary" id="position-top-end" name="submitButton">حفظ</button>
+                <button class="btn btn-label-secondary" type="reset" data-bs-dismiss="offcanvas">إلغاء</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+  @*  <div class="sm-12">
+        <label class="form-label"> حالة بلد  </label>
+        <select  id="select2Basic" required class=" form-select form-select-lg" placeholder="حالة بلد" data-allow-clear="true">
+            <option label=""> يرجى اختيار حالة بلد </option>
+            <option value="True"> نشط </option>
+            <option value="False"> غير نشط </option>
+        </select>
+        <span  class="text-danger"></span>
+     </div>*@
+
+  

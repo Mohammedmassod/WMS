@@ -1,0 +1,424 @@
+﻿
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="breadcrumb-wrapper py-3 mb-4">
+        <span class="text-muted fw-light">الصفحة الرئيسية / </span> الفحص المعاينة
+    </h4>
+
+
+
+    <!-- فحص شروط فتح مخزن او محل -->
+    <div class="col-12 mb-4">
+
+        <div id="wizard-validation" class="bs-stepper mt-2">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="exampleModalLabel">فحص شروط فتح مخزن او محل </h5>
+                <a asp-action="Index"> <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button></a>
+            </div>
+            <div class="bs-stepper-header">
+                <div class="step" data-target="#Examination-inspection">
+                    <button type="button" class="step-trigger">
+                        <span class="bs-stepper-circle">1</span>
+                        <span class="bs-stepper-label"> بيانات الفحص والمعاينة </span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#Storage-Specifications">
+                    <button type="button" class="step-trigger">
+                        <span class="bs-stepper-circle">2</span>
+                        <span class="bs-stepper-label"> مواصفات التخزين  </span>
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#Refrigerators-Check">
+                    <button type="button" class="step-trigger">
+                        <span class="bs-stepper-circle">3</span>
+                        <span class="bs-stepper-label">     فحص الثلاجات </span>
+                    </button>
+                </div>
+
+
+
+
+            </div>
+            <div class="bs-stepper-content">
+
+                <form id="wizard-validation-form" onSubmit="return false">
+                    <!--/   بيانات طالب الترخيص محل اعادة التعبئة  -->
+<div id="Examination-inspection" class="content">
+    <div class="content-header mb-3">
+        <h4 class="mb-0">بيانات الفحص والمعاينة</h4>
+        <small>ادخال بيانات الفحص والمعاينة</small>
+    </div>
+    <div class="row g-3">
+        <div class="col-sm-4">
+            <label class="form-label" for="StoreNumber">رقم القيد</label>
+            <div class="input-group input-group-merge">
+                <input type="number" id="StoreNumber" name="StoreNumber" class="form-control" placeholder="1" readonly />
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="FirstName">اسم التاجر</label>
+            <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="اسم التاجر" />
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="LastName">اللقب</label>
+            <input type="text" id="LastName" name="LastName" class="form-control" placeholder="اللقب" />
+        </div>
+        <h5 class="offcanvas-title" id="exampleModalLabel">عنوان المخزن</h5>
+        <div class="col-sm-4">
+            <label class="form-label" for="Province">المحافظة</label>
+            <input type="text" name="Province" id="Province" class="form-control" placeholder="المحافظة" />
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="Directorate">المديرية</label>
+            <input type="text" name="Directorate" id="Directorate" class="form-control" placeholder="المديرية" />
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="Front">أمام</label>
+            <input type="text" name="Front" id="Front" class="form-control" placeholder="أمام" />
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="Street">شارع</label>
+            <input type="text" name="Street" id="Street" class="form-control" placeholder="شارع" />
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="Neighbohood">جوار</label>
+            <input type="text" name="Neighbohood" id="Neighbohood" class="form-control" placeholder="جوار" />
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="StoreCategories">فئة المخزن</label>
+            <select id="StoreCategories" name="StoreCategories" class="form-select">
+                <option label=""></option>
+                <option value="True">محل إعادة تعبئة</option>
+                <option value="False">مخزن تخزين</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="ExaminationDate">تاريخ نزول الفحص</label>
+            <div class="input-group input-group-merge has-validation">
+                <span id="basicDate2" class="input-group-text">
+                    <i class="bx bx-calendar"></i>
+                </span>
+                <input type="date" class="form-control dt-date flatpickr-input" id="ExaminationDate" name="ExaminationDate" aria-describedby="basicDate2" placeholder="MM/DD/YYYY" aria-label="MM/DD/YYYY" />
+            </div>
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+        </div>
+        <div class="d-flex col-12 justify-content-between">
+            <button class="btn btn-label-secondary btn-prev" disabled>
+                <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                <span class="d-none d-sm-inline-block">السابق</span>
+            </button>
+            <button class="btn btn-primary btn-next">
+                <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+          <!-- مواصفات التخزين -->
+                    <div id="Storage-Specifications" class="content">
+                        <div class="content-header mb-3">
+                            <h4 class="mb-0">مواصفات التخزين  </h4>
+                            <small>ادخال مواصفات التخزين   </small>
+                        </div>
+
+                        <div class="row g-3">
+                            <label class="form-check-label form-label fs-6" for="selectAll">  موقع المخزن من الأماكن الرطبة </label>
+                         
+
+                                <div class="form-check col-sm-6">
+                                    <input class="form-check-input " type="checkbox" id="selectAll" />
+                                    <label class="form-check-label form-label fs-6" for="selectAll"> اختيار الكل </label>
+                                </div>
+                                <hr>
+
+                                <div class="form-check col-sm-6">
+                                    <input class="form-check-input input-filter" type="checkbox" name="temperature" id="check1" />
+                                    <label class="form-check-label form-label d-block" for="temperature">درجة الحرارة </label>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control" id="fromTemperature" name="temperature"
+                                                   placeholder="من" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control" id="toTemperature" name="temperature"
+                                                   placeholder="إلى" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check col-sm-6">
+                                    <input class="form-check-input input-filter" type="checkbox" name="humidity" id="check2" />
+                                    <label class="form-check-label form-label d-block" for="humidity"> الرطوبة </label>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control" id="fromHumidity" name="minHumidity"
+                                                   placeholder="من" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="number" class="form-control" id="toHumidity" name="minHumidity"
+                                                   placeholder="إلى" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-check col-sm-6">
+                                    <input class="form-check-input input-filter" type="checkbox" name="dry"
+                                           id="dry" />
+                                    <label class="form-check-label form-label d-block" for="dry">أن يكون المخزن جاف </label>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="form-check-label form-label d-block" for="Store-location-contaminated">موقع المخزن من الأماكن الملوثة</label>
+                                    <div class="form-check form-check-inline">
+                                        <input name="areaType" class="form-check-input" type="radio" value="polluted" id="pollutedArea" checked>
+                                        <label class="form-check-label" for="pollutedArea">منطقة ملوثة</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="areaType" class="form-check-input" type="radio" value="clean" id="CleanArea">
+                                        <label class="form-check-label" for="CleanArea">منطقة نظيفة</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="form-check-label form-label d-block" for="Location-Store-paved-roads">موقع المخزن من الطرق الممهدة</label>
+                                    <div class="form-check form-check-inline">
+                                        <input name="locationType" class="form-check-input" type="radio" value="near" id="Relative" checked >
+                                        <label class="form-check-label" for="Relative">قريب</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="locationType" class="form-check-input" type="radio" value="far" id="Far">
+                                        <label class="form-check-label" for="Far">بعيد</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="form-check-label form-label d-block" for="dry">المنصات التي توضع جميع السلع المخزنة</label>
+                                    <div class="form-check form-check-inline">
+                                        <input name="platformType" class="form-check-input" type="radio" value="exists" id="collapsible-address-type-home" checked>
+                                        <label class="form-check-label" for="collapsible-address-type-home">توجد</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="platformType" class="form-check-input" type="radio" value="not-exists" id="collapsible-address-type-office">
+                                        <label class="form-check-label" for="collapsible-address-type-office">لاتوجد</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="itemState">تهوية وممرات لتسمح بمرور التيارات الهوائية</label>
+                                    <select id="ventilation" name="ventilation" class="form-select">
+                                        <option value="">يرجى اختيار التهوية</option>
+                                        <option value="exists">توجد</option>
+                                        <option value="not-exists">لاتوجد</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="itemState">المواد الكيمائية والمنظفات ومبيدات الحشرات بجوار المواد الغذائية</label>
+                                    <select id="chemicals" name="chemicals" class="form-select">
+                                        <option value="">يرجى اختيار ....</option>
+                                        <option value="exists">توجد</option>
+                                        <option value="not-exists">لاتوجد</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-6" >
+                                    <label class="form-label" for="itemState">خلو المخزن من الحشرات والقوارض واثارها</label>
+                                    <select id="pests" name="pests" class="form-select">
+                                        <option value="">يرجى اختيار .....</option>
+                                        <option value="exists">توجد</option>
+                                        <option value="not-exists">لاتوجد</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="industrialVentilation">معدات التهوية الصناعية وكفاءتها</label>
+                                    <select id="industrialVentilation" name="industrialVentilation" class="form-select">
+                                        <option value="">يرجى اختيار ..... </option>
+                                        <option value="exists">توجد</option>
+                                        <option value="not-exists">لاتوجد</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="healthConditions">الشروط الصحية في المخزن والعاملين</label>
+                                    <select id="healthConditions" name="healthConditions" class="form-select">
+                                        <option value="">يرجى اختيار ..... </option>
+                                        <option value="exists">توجد</option>
+                                        <option value="not-exists">لاتوجد</option>
+                                    </select>
+                                </div>
+
+                       
+
+
+
+
+                            <div class="d-flex col-12 justify-content-between ">
+                                <button class="btn btn-label-secondary btn-prev">
+                                    <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                    <span class="d-none d-sm-inline-block">السابق</span>
+                                </button>
+                                <button class="btn btn-primary btn-next">
+                                    <span class="d-none d-sm-inline-block me-sm-1">التالي</span>
+                                    <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="Refrigerators-Check" class="content">
+                        <div class="content-header mb-3">
+                            <h4 class="mb-0"> بيانات فحص ومعاينة الثلاجات       </h4>
+                            <small>ادخال بيانات فحص ومعاينة الثلاجات  </small>
+                        </div>
+
+                        <div class="row g-3">
+                                  <div class="col-sm-6">
+                                <label class="form-check-label form-label d-block" for="cooling-temp">درجة حرارة داخل ثلاجة التبريد لا تزيد عن 4 درجات مئوية</label>
+                                <div class="form-check form-check-inline">
+                                    <input name="cooling-temp" class="form-check-input" type="radio" value="" id="cooling-temp-match" checked="">
+                                    <label class="form-check-label" for="cooling-temp-match">مطابقة</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="cooling-temp" class="form-check-input" type="radio" value="" id="cooling-temp-mismatch">
+                                    <label class="form-check-label" for="cooling-temp-mismatch">غير مطابقة</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="form-check-label form-label d-block" for="freezing-temp">درجة حرارة داخل ثلاجة التجميد لا تقل عن 18 درجة مئوية</label>
+                                <div class="form-check form-check-inline">
+                                    <input name="freezing-temp" class="form-check-input" type="radio" value="" id="freezing-temp-match" checked="">
+                                    <label class="form-check-label" for="freezing-temp-match">مطابقة</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="freezing-temp" class="form-check-input" type="radio" value="" id="freezing-temp-mismatch">
+                                    <label class="form-check-label" for="freezing-temp-mismatch">غير مطابقة</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="form-check-label form-label d-block" for="damaged-items">عدم وجود مواد تالفة أو فاسدة أو غير صالحة داخل المخازن</label>
+                                <div class="form-check form-check-inline">
+                                    <input name="damaged-items" class="form-check-input" type="radio" value="" id="damaged-items-exist" checked="">
+                                    <label class="form-check-label" for="damaged-items-exist">توجد</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="damaged-items" class="form-check-input" type="radio" value="" id="damaged-items-not-exist">
+                                    <label class="form-check-label" for="damaged-items-not-exist">لا توجد</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="form-label" for="fridge-efficiency">كفاءة عمل الثلاجات</label>
+                                <select id="fridge-efficiency" name="fridge-efficiency" class="form-select">
+                                    <option value="">يرجى اختيار...</option>
+                                    <option value="high">عالية</option>
+                                    <option value="medium">متوسطة</option>
+                                    <option value="low">منخفضة</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="form-label" for="storage-arrangement">ترتيب المواد المخزنة بالثلاجة</label>
+                                <select id="storage-arrangement" name="storage-arrangement" class="form-select">
+                                    <option value="">يرجى اختيار...</option>
+                                    <option value="organized">مرتبة</option>
+                                    <option value="disorganized">غير مرتبة</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="form-label" for="temperature-measurement">توفر أجهزة قياس درجة الحرارة</label>
+                                <select id="temperature-measurement" name="temperature-measurement" class="form-select">
+                                    <option label="">يرجى اختيار...</option>
+                                    <option value="available">متوفرة</option>
+                                    <option value="unavailable">غير متوفرة</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="form-label" for="fridge-loading">تحميل الثلاجة</label>
+                                <select id="fridge-loading" name="fridge-loading" class="form-select">
+                                    <option value="">يرجى اختيار...</option>
+                                    <option value="matching">مطابقة</option>
+                                    <option value="mismatching">غير مطابقة</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <label class="form-label" for="status">الحالة</label>
+                                <select id="status" name="status" class="form-select">
+                                    <option value="">يرجى اختيار...</option>
+                                    <option value="matching">مطابقة</option>
+                                    <option value="mismatching">غير مطابقة</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6 fv-plugins-icon-container">
+                                <label class="form-label" for="specialist-name">اسم المختص</label>
+                                <div class="input-group input-group-merge has-validation">
+                                    <span id="specialist-name2" class="input-group-text">
+                                        <i class="bx bx-user"></i>
+                                    </span>
+                                    <input type="text" id="specialist-name" class="form-control dt-full-name" name="specialist-name" placeholder="اسم المختص" aria-label="John Doe" aria-describedby="specialist-name">
+                                </div>
+                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                            </div>
+                            
+                                <div class="d-flex col-12 justify-content-between">
+                                    <button class="btn btn-label-secondary btn-prev">
+                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                        <span class="d-none d-sm-inline-block">السابق</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-next">
+                                        <span class="d-none d-sm-inline-block me-sm-1">ارسال</span>
+                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                    </button>
+                                </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+ 
+</div>
+ 
+<!-- Core JS -->
+
+  <!-- build:js assets/vendor/js/core.js -->
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+    <script src="../../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../../assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+    <script src="../../assets/vendor/libs/select2/select2.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <script src="../../assets/js/form-wizard-numbered.js"></script>
+<script src="../../assets/js/Examination-validation.js"></script>

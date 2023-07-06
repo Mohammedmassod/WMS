@@ -1,0 +1,104 @@
+﻿
+<div class="offcanvas offcanvas-end show" id="add-new-record" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="exampleModalLabel">تسديد فاتورة</h5>
+        <a asp-action="ReimbursementIndex">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </a>
+    </div>
+    <div class="offcanvas-body flex-grow-1">
+
+        <form asp-action="AddReimbursement" class="add-new-record row g-2 pt-0 fv-plugins-bootstrap5 fv-plugins-framework" id="form-add-new-record" onsubmit="return false" novalidate="novalidate">
+
+            <div class="col-sm-12">
+                <label class="form-label">رقم الفاتورة</label>
+                <div class="input-group input-group-merge">
+                    <input type="number" id="VNumber" name="VNumber" class="form-control" placeholder="1" readonly />
+                </div>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label" for="PaymentDate">تاريخ التسديد</label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="PaymentDate" class="input-group-text">
+                        <i class="bx bx-calendar"></i>
+                    </span>
+                    <input type="date" class="form-control dt-date flatpickr-input" id="basicDate" name="basicDate" aria-describedby="basicDate2" placeholder="MM/DD/YYYY" aria-label="MM/DD/YYYY">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label" for="PaymentAmount">المبلغ المدفوع </label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text"></span>
+                    <input type="number" id="PaymentAmount" class="form-control dt-full-name" name="PaymentAmount" placeholder="ريال يمني" aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label">طرق الدفع  </label>
+                <select class="form-select mb-4">
+                    <option value="Bank Account">حساب البنك </option>
+                    <option value="Paypal">بنك الكريمي</option>
+                    <option value="Card"> بنك التضامن</option>
+                    <option value="UPI Transfer"> كاش ماني</option>
+                    <option value="Bank Transfer"> حولة بنكية </option>    
+                    <option value="Bank Transfer">  نقد </option>
+                </select>
+            </div>
+
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label" for="PaymentReference">رقم الحساب    </label>
+                <div class="input-group input-group-merge has-validation">
+                    <span id="basicFullname2" class="input-group-text"></span>
+                    <input type="number" id="PaymentReference" class="form-control dt-full-name" name="PaymentReference" placeholder="رقم الحساب" aria-label="John Doe" aria-describedby="basicFullname2">
+                </div>
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+
+            <div class="col-sm-12">
+                <label class="form-label" for="nvoiceTypeID"> نوع الفاتورة </label>
+                <select id="nvoiceTypeID"
+                        name="nvoiceTypeID"
+                        class="form-select "
+                        data-allow-clear="true">
+                </select>
+            </div>
+            <div class="col-sm-12">
+                <label class="form-label" for="itemNumber"> رقم الترخيص </label>
+                <div class="input-group input-group-merge">
+                    <input type="number" name="licensesNumber" class="form-control" placeholder="1" readonly />
+                </div>
+            </div>
+            <div class="col-sm-12 fv-plugins-icon-container">
+                <label class="form-label">اسم المرسل</label>
+                <input type="text" required class="form-control dt-full-name" placeholder="اسم المرسل" readonly />
+                <span class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="invoice-message" class="form-label">ملاحظات</label>
+                <textarea class="form-control" name="invoice-message" id="invoice-message" cols="3" rows="5">
+                              </textarea>
+            </div>
+
+            @* <div class="sm-12">
+                <label class="form-label">حالة الفاتورة</label>
+                <select id="select2Basic" required class="select2 form-select form-select-lg" placeholder="حالة الفاتورة">
+                <option value=NULL>يرجى اختيار حالة الفاتورة</option>
+                <option value="True">مدفوعة</option>
+                <option value="False">غير مدفوعة</option>
+                </select>
+                <span class="text-danger"></span>
+                </div>*@
+
+            <div class="d-grid gap-2 col-13 mx-auto mt-4">
+                <button type="submit" class="btn btn-primary" id="type-success" name="submitButton">حفظ</button>
+                <button class="btn btn-label-secondary" type="reset" data-bs-dismiss="offcanvas">إلغاء</button>
+            </div>
+
+        </form>
+    </div>
+</div>
